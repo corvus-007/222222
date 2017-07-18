@@ -1,13 +1,13 @@
 .welcome-screen {
   position: relative;
   min-height: 100vh;
-  padding-top: rem(45);
+  padding-top: 5vmin;
   padding-bottom: rem(100);
   box-sizing: border-box;
 
   @include media-breakpoint-down(md) {
     padding-top: 0;
-    padding-bottom: rem(50);
+    padding-bottom: 50px;
   }
 }
 

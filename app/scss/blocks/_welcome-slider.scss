@@ -96,11 +96,7 @@
   }
 
   @include media-breakpoint-up(lg) {
-    padding: rem(50);
-  }
-
-  @include media-breakpoint-up(xxl) {
-    padding: rem(55);
+    padding: 50px;
   }
 }
 
