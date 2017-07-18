@@ -2,12 +2,11 @@
   position: relative;
   min-height: 100vh;
   padding-top: 5vmin;
-  padding-bottom: rem(100);
+  padding-bottom: 10vh;
   box-sizing: border-box;
 
   @include media-breakpoint-down(md) {
     padding-top: 0;
-    padding-bottom: 50px;
   }
 }
 
