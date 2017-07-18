@@ -14,11 +14,6 @@
     height: auto;
   }
 
-  @include media-breakpoint-up(sm) {
-    // padding-left: 1rem;
-    // padding-right: 1rem;
-  }
-
   @include media-breakpoint-up(md) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -120,7 +115,7 @@
 }
 
 .welcome-slider__item-cation {
-  margin-bottom: 3.8vmin;
+  margin-bottom: 3.8vh;
   font-family: $secondary-font;
   font-weight: 600;
   font-size: rem(31);
@@ -129,17 +124,15 @@
   color: $accent-color-2;
 
   @include media-breakpoint-up(sm) {
-    // margin-bottom: rem(32);
     font-size: rem(33);
   }
   @include media-breakpoint-up(md) {
-    // margin-bottom: rem(35);
     font-size: rem(36);
   }
 }
 
 .welcome-slider__item-text {
-  margin-bottom: 3.8vmin;
+  margin-bottom: 3.8vh;
 
   & > :last-child {
     margin-bottom: 0;
