@@ -1,0 +1,15 @@
+.welcome-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: url("images/Highlights.jpg") no-repeat center / cover;
+}
+
+.welcome-overlay__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

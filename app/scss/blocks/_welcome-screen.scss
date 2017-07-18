@@ -1,0 +1,44 @@
+.welcome-screen {
+  position: relative;
+  min-height: 100vh;
+  padding-top: rem(45);
+  padding-bottom: rem(100);
+  box-sizing: border-box;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 0;
+    padding-bottom: rem(50);
+  }
+}
+
+.welcome-screen__overlay {
+
+}
+
+.welcome-screen__header {
+
+}
+
+.welcome-screen__slider {
+  @include make-container();
+
+  position: relative;
+  margin-top: 10.5vmin;
+}
+
+.welcome-screen__pointer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  width: rem(24);
+  height: rem(41);
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px / 11px;
+  cursor: pointer;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+.apps {
+
+}
+
+.apps__list {
+  @include clear-list();
+
+  display: flex;
+}
+
+.apps__item {
+  margin-right: rem(16);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.apps__link {
+  display: block;
+  background-color: $black-color;
+  border-radius: $border-radius;
+  transition: filter $duration;
+
+  &:hover,
+  &:focus {
+    filter: brightness(130%);
+  }
+}
+
+.apps__image {
+  vertical-align: middle;
+}
