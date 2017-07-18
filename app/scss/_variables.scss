@@ -54,7 +54,8 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1280px,
-  xxl: 1500px
+  xxl: 1500px,
+  xxxl: 1920px
 );
 
 $grid-max-widths: (
@@ -62,7 +63,8 @@ $grid-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1000px,
-  xxl: 1200px
+  xxl: 1200px,
+  xxxl: 1300px
 );
 
 $grid-max-widths--slim: (
@@ -70,7 +72,8 @@ $grid-max-widths--slim: (
   md: none,
   lg: 780px,
   xl: 800px,
-  xxl: 980px
+  xxl: 980px,
+  xxxl: 1100px
 );
 
 $grid-max-widths--fat: (
@@ -78,5 +81,6 @@ $grid-max-widths--fat: (
   md: none,
   lg: 1040px,
   xl: 1180px,
-  xxl: 1300px
+  xxl: 1300px,
+  xxxl: 1400px
 );
