@@ -28,4 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+
+  var tabsTarifs = document.querySelector('.tabs-tarifs');
+
+  if (tabsTarifs) {
+    $(tabsTarifs).tabslet();
+  }
+
 });
