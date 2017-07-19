@@ -18,16 +18,19 @@
 
 .apps__link {
   display: block;
+  padding-top: 3px;
+  padding-bottom: 3px;
   background-color: $black-color;
   border-radius: $border-radius;
-  transition: filter $duration;
+  transition: $duration;
 
   &:hover,
   &:focus {
-    filter: brightness(130%);
+    background-color: $accent-color;
   }
 }
 
 .apps__image {
   vertical-align: middle;
+  width: rem(100);
 }

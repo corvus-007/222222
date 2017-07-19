@@ -1,5 +1,9 @@
 .welcome-slider {
 
+  .slick-list {
+    box-shadow: $box-shadow;
+  }
+
   .slick-track {
     display: flex;
 
@@ -9,9 +13,20 @@
     }
   }
 
+  .slick-arrow {
+    box-shadow: $box-shadow;
+  }
+
   &.slick-initialized .welcome-slider__item {
     display: flex;
     height: auto;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .slick-arrow {
+      top: calc(30vh - 25px);
+      bottom: auto;
+    }
   }
 
   @include media-breakpoint-up(md) {
@@ -27,35 +42,25 @@
 
 .welcome-slider__item {
   position: relative;
-  background-color: $white-color;
+  background-color: $gray-color-245;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  @include media-breakpoint-down(xs) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .welcome-slider__item-image {
   overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   @include media-breakpoint-down(xs) {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #fff;
-      opacity: 0.95;
-    }
+    height: 30vh;
   }
 
   @include media-breakpoint-up(sm) {
@@ -69,7 +74,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  flex-grow: 1;
   padding: 6.25vmin;
   box-sizing: border-box;
 
@@ -88,7 +93,9 @@
 }
 
 .welcome-slider__item-label {
-  margin-bottom: 10vh;
+  position: absolute;
+  left: 50%;
+  background-color: $gray-color-245;
   padding: rem(5) rem(6);
   font-weight: 600;
   font-size: rem(10);
@@ -97,9 +104,19 @@
   text-transform: uppercase;
   border-radius: $border-radius;
 
-  @include media-breakpoint-up(sm) {
-    align-self: flex-start;
+  @include media-breakpoint-down(xs) {
+    top: 2vh;
+    transform: translateX(-50%);
   }
+
+  @include media-breakpoint-up(sm) {
+    margin-left: 6.25vmin;
+    margin-top: 6.25vmin;
+  }
+}
+
+.welcome-slider__item-label-text {
+
 }
 
 .welcome-slider__item--type-promo .welcome-slider__item-label {
@@ -110,11 +127,8 @@
   color: #11CBD7;
 }
 
-.welcome-slider__item-label-text {
-
-}
-
 .welcome-slider__item-cation {
+  margin-top: 1vh;
   margin-bottom: 3.8vh;
   font-family: $secondary-font;
   font-weight: 600;
@@ -125,6 +139,7 @@
 
   @include media-breakpoint-up(sm) {
     font-size: rem(33);
+    margin-top: 12vh;
   }
   @include media-breakpoint-up(md) {
     font-size: rem(36);
@@ -132,7 +147,7 @@
 }
 
 .welcome-slider__item-text {
-  margin-bottom: 3.8vh;
+  margin-bottom: 8.75vh;
 
   & > :last-child {
     margin-bottom: 0;
@@ -143,7 +158,10 @@
   display: flex;
   align-items: center;
   margin-top: auto;
-  align-self: flex-end;
+
+  @include media-breakpoint-up(sm) {
+    align-self: flex-end;
+  }
 }
 
 .welcome-slider__item-more-link {

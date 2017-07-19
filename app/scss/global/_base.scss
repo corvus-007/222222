@@ -8,6 +8,10 @@ html {
   @include media-breakpoint-up(xxxl) {
     font-size: ($font-size * 1.22);
   }
+
+  @include media-breakpoint-up(xxxxl) {
+    font-size: ($font-size * 1.4);
+  }
 }
 
 body {

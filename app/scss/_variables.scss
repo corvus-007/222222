@@ -1,10 +1,11 @@
 // Colors
-$base-color: #424242;
+$base-color: #000000;
 $accent-color: #d6324a;
 $accent-color-2: #5e0c18;
 $primary-color: #48466D;
 $secondary-color: #3D84A8;
 
+$gray-color-184: #b8b8b8;
 $gray-color-245: #f5f5f5;
 
 $success-color: #11fd6d;
@@ -31,6 +32,8 @@ $secondary-font: Oswald, sans-serif;
 $duration: 0.25s;
 $border-radius: 3px;
 
+$box-shadow: 0 10px 15px rgba(#292929, 0.2);
+
 
 // Grid
 $grid-columns: 12;
@@ -55,7 +58,8 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1280px,
   xxl: 1500px,
-  xxxl: 1920px
+  xxxl: 1920px,
+  xxxxl: 2560px
 );
 
 $grid-max-widths: (
@@ -64,7 +68,8 @@ $grid-max-widths: (
   lg: 960px,
   xl: 1000px,
   xxl: 1200px,
-  xxxl: 1300px
+  xxxl: 1300px,
+  xxxxl: 1560px
 );
 
 $grid-max-widths--slim: (
@@ -73,7 +78,8 @@ $grid-max-widths--slim: (
   lg: 780px,
   xl: 800px,
   xxl: 980px,
-  xxxl: 1100px
+  xxxl: 1100px,
+  xxxxl: 1260px
 );
 
 $grid-max-widths--fat: (
@@ -82,5 +88,6 @@ $grid-max-widths--fat: (
   lg: 1040px,
   xl: 1180px,
   xxl: 1300px,
-  xxxl: 1400px
+  xxxl: 1400px,
+  xxxxl: 1500px
 );

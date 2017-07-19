@@ -46,6 +46,14 @@
   @include media-breakpoint-up(xl) {
     max-width: 1600px;
   }
+
+  @include media-breakpoint-up(xxl) {
+    max-width: 1700px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    max-width: 1800px;
+  }
 }
 
 @mixin visuallyhidden {

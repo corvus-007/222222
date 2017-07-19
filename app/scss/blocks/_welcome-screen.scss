@@ -1,13 +1,11 @@
 .welcome-screen {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  padding-top: 5vmin;
+  padding-top: 5vh;
   padding-bottom: 10vh;
   box-sizing: border-box;
-
-  @include media-breakpoint-down(md) {
-    padding-top: 0;
-  }
 }
 
 .welcome-screen__overlay {
@@ -22,20 +20,26 @@
   @include make-container();
 
   position: relative;
-  margin-top: 10.5vh;
+  margin: auto;
+  // margin-top: 10.5vh;
 }
 
 .welcome-screen__pointer {
   position: absolute;
-  bottom: 15px;
+  bottom: 3.5vh;
   left: 0;
   right: 0;
   width: rem(24);
   height: rem(41);
   margin: auto;
-  background-color: #fff;
-  border-radius: 8px / 11px;
+  border: 2px solid $accent-color;
+  border-radius: 11px / 20px;
   cursor: pointer;
+  transition: $duration;
+
+  &:hover {
+    border-color: $accent-color;
+  }
 
   @include media-breakpoint-down(sm) {
     display: none;

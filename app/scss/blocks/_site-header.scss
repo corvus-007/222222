@@ -1,8 +1,14 @@
 .site-header {
-  position: relative;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  // padding-top: 8px;
+  // padding-bottom: 8px;
   background-color: $gray-color-245;
+  background-color: $black-color;
+  box-shadow: $box-shadow;
 }
 
 .site-header__inner {

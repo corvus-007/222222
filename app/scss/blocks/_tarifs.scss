@@ -1,0 +1,44 @@
+.tarifs {
+
+}
+
+.tarifs__columns-items {
+  display: flex;
+}
+
+.tarifs__column {
+  flex: none;
+  box-sizing: border-box;
+
+  &--filter {
+    width: 40%;
+    padding-right: rem($grid-gutter-width);
+  }
+
+  &--output {
+    flex-grow: 1;
+  }
+}
+
+.tarifs__footnote {
+  color: $gray-color-184;
+  font-size: rem($font-size--smaller);
+}
+
+.tarifs__more {
+  text-align: right;
+  font-size: rem($font-size--smaller);
+  font-weight: 500;
+  font-family: $secondary-font;
+  text-transform: uppercase;
+}
+
+.tarifs__more-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.tarifs__more-icon {
+  margin-left: 0.5rem;
+  fill: currentColor;
+}

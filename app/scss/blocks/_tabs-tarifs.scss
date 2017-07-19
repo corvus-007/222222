@@ -1,0 +1,60 @@
+.tabs-tarifs {
+
+}
+
+.tabs-tarifs__menu {
+  @include clear-list();
+
+  display: flex;
+  margin-bottom: rem($grid-gutter-width);
+  font-weight: 500;
+  font-size: rem($font-size--smaller);
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  text-align: center;
+  border: 3px solid $gray-color-245;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.tabs-tarifs__item {
+  flex-grow: 1;
+}
+
+.tabs-tarifs__link {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  color: $base-color;
+  transition: $duration;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:hover {
+    filter: brightness(120%);
+  }
+}
+
+.active .tabs-tarifs__link {
+  color: $accent-color;
+  cursor: default;
+}
+
+.tabs-tarifs__icon {
+  fill: currentColor;
+  max-width: 100%;
+  height: auto;
+}
+
+.tabs-tarifs__label {
+  display: block;
+}
+
+.tabs-tarifs__pane {
+  padding-left: rem($grid-gutter-width);
+  padding-right: rem($grid-gutter-width);
+}

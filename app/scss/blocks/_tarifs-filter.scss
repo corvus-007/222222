@@ -1,0 +1,59 @@
+.tarifs-filter {
+  display: flex;
+  margin-bottom: rem($grid-gutter-width * 2.5);
+}
+
+.tarifs-filter__column {
+}
+
+.tarifs-filter__list {
+  @include clear-list();
+
+  margin-right: 4.3vw;
+  font-weight: 500;
+  font-size: rem($font-size--smaller);
+  font-family: $secondary-font;
+  text-transform: uppercase;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.tarifs-filter__item {
+  margin-bottom: 1.2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tarifs-filter__link {
+  display: flex;
+  align-items: center;
+  color: $gray-color-184;
+  transition: $duration;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.tarifs-filter__item--active .tarifs-filter__link {
+  color: $accent-color;
+  cursor: default;
+}
+
+.tarifs-filter__icon {
+  fill: currentColor;
+  margin-right: 0.8em;
+}
+
+.tarifs-filter__label {
+  @include dotted-link();
+}
+
+.tarifs-filter__item--active .tarifs-filter__label {
+  background-image: none;
+}
