@@ -6,10 +6,16 @@
   @include clear-list();
 
   li {
-    margin-bottom: rem(25);
+    margin-bottom: rem(20);
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    li {
+      margin-bottom: rem(25);
     }
   }
 }
@@ -23,7 +29,7 @@
   font-family: $secondary-font;
   border: none;
   color: $white-color;
-  white-space: nowrap;
+
   background: none;
   text-align: left;
   text-transform: uppercase;
@@ -50,6 +56,10 @@
     border-radius: 50%;
     background-clip: content-box;
     box-shadow: 0 0 0 8px rgba($white-color, 0.4), 0 0 0 4px rgba($white-color, 0.4);
+  }
+
+  @include media-breakpoint-up(md) {
+    white-space: nowrap;
   }
 }
 
