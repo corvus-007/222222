@@ -1,0 +1,26 @@
+.site-footer {
+  background-color: $black-color;
+}
+
+.site-footer__row {
+
+  &--top {
+    background-color: $gray-color-21;
+  }
+
+  &--bottom {
+
+  }
+}
+
+.site-footer__container {
+  @include make-container();
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-footer__button {
+
+}
