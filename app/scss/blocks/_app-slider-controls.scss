@@ -37,14 +37,6 @@
   user-select: none;
   cursor: pointer;
 
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -56,9 +48,22 @@
     border-radius: 50%;
     background-clip: content-box;
     box-shadow: 0 0 0 8px rgba($white-color, 0.4), 0 0 0 4px rgba($white-color, 0.4);
+    transition: ($duration * 1.5);
   }
 
-  @include media-breakpoint-up(md) {
+  &:hover {
+    // opacity: 0.8;
+
+    &::before {
+      box-shadow: 0 0 0 10px rgba($white-color, 0.4), 0 0 0 5px rgba($white-color, 0.4);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include media-breakpoint-up(lg) {
     white-space: nowrap;
   }
 }
