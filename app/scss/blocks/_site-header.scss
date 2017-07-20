@@ -4,9 +4,6 @@
   top: 0;
   right: 0;
   z-index: 10;
-  // padding-top: 8px;
-  // padding-bottom: 8px;
-  background-color: $gray-color-245;
   background-color: $black-color;
   box-shadow: $box-shadow;
 }
@@ -20,7 +17,6 @@
 }
 
 .site-header__column {
-
   @include media-breakpoint-up(lg) {
     margin-right: 2rem;
 
@@ -30,7 +26,7 @@
   }
 }
 
-.site-header__apps {
+.site-header__download-apps {
   @include media-breakpoint-down(md) {
     display: none;
   }
