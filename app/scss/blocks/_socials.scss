@@ -10,12 +10,12 @@
   margin-right: 1.2em;
   border: none;
   transition: $duration;
-  color: $accent-color;
+  color: currentColor;
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    color: $white-color;
+    transform: scale(1.2);
+    color: $accent-color;
   }
 
   &:last-child {
