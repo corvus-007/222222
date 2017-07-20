@@ -5,6 +5,7 @@ $accent-color-2: #5e0c18;
 $primary-color: #48466D;
 $secondary-color: #3D84A8;
 
+$gray-color-21: #151515;
 $gray-color-184: #b8b8b8;
 $gray-color-245: #f5f5f5;
 
@@ -63,7 +64,8 @@ $grid-breakpoints: (
 );
 
 $grid-max-widths: (
-  sm: none,
+  xs: calc(100% - 2rem),
+  sm: calc(100% - 2rem),
   md: 720px,
   lg: 960px,
   xl: 1000px,
@@ -73,8 +75,9 @@ $grid-max-widths: (
 );
 
 $grid-max-widths--slim: (
-  sm: none,
-  md: none,
+  xs: calc(100% - 2rem),
+  sm: calc(100% - 2rem),
+  md: calc(100% - 2rem),
   lg: 780px,
   xl: 800px,
   xxl: 980px,
@@ -83,8 +86,9 @@ $grid-max-widths--slim: (
 );
 
 $grid-max-widths--fat: (
-  sm: none,
-  md: none,
+  xs: calc(100% - 2rem),
+  sm: calc(100% - 2rem),
+  md: calc(100% - 2rem),
   lg: 1040px,
   xl: 1180px,
   xxl: 1300px,
