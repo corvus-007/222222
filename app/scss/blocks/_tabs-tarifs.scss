@@ -15,6 +15,10 @@
   border: 3px solid $gray-color-245;
   border-radius: 100px;
   overflow: hidden;
+
+  @include media-breakpoint-down(xs) {
+    font-size: rem(10);
+  }
 }
 
 .tabs-tarifs__item {
@@ -48,6 +52,10 @@
   fill: currentColor;
   max-width: 100%;
   height: auto;
+
+  @include media-breakpoint-down(xs) {
+    width: rem(48px);
+  }
 }
 
 .tabs-tarifs__label {
