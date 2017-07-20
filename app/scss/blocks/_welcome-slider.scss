@@ -41,30 +41,31 @@
 }
 
 .welcome-slider__item {
+  display: flex;
+  min-width: 0;
   position: relative;
   background-color: $gray-color-245;
   border-radius: $border-radius;
   overflow: hidden;
 
   @include media-breakpoint-down(xs) {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
 
 .welcome-slider__item-image {
-  overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  flex: none;
 
   @include media-breakpoint-down(xs) {
     height: 30vh;
+    width: 100%;
   }
 
   @include media-breakpoint-up(sm) {
-    flex: none;
     width: 50%;
   }
 }

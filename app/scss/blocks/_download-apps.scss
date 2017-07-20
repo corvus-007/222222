@@ -1,14 +1,14 @@
-.apps {
+.download-apps {
 
 }
 
-.apps__list {
+.download-apps__list {
   @include clear-list();
 
   display: flex;
 }
 
-.apps__item {
+.download-apps__item {
   margin-right: rem(16);
 
   &:last-child {
@@ -16,7 +16,7 @@
   }
 }
 
-.apps__link {
+.download-apps__link {
   display: block;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -30,7 +30,11 @@
   }
 }
 
-.apps__image {
+.download-apps__image {
   vertical-align: middle;
   width: rem(100);
+}
+
+.download-apps--large .download-apps__image {
+  width: rem(125);
 }
