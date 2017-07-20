@@ -4,6 +4,11 @@
 
 .tarifs__columns-items {
   display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
 }
 
 .tarifs__column {
@@ -11,18 +16,28 @@
   box-sizing: border-box;
 
   &--filter {
-    width: 40%;
-    padding-right: rem($grid-gutter-width);
+
   }
 
   &--output {
     flex-grow: 1;
+  }
+
+  @include media-breakpoint-up(md) {
+    &--filter {
+      width: 40%;
+      padding-right: rem($grid-gutter-width);
+    }
   }
 }
 
 .tarifs__footnote {
   color: $gray-color-184;
   font-size: rem($font-size--smaller);
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 .tarifs__more {
