@@ -29,11 +29,6 @@
   bottom: 3.5vh;
   left: 0;
   right: 0;
-  width: rem(24);
-  height: rem(41);
-  margin: auto;
-  border: 2px solid $accent-color;
-  border-radius: 11px / 20px;
   cursor: pointer;
   transition: $duration;
 
@@ -43,5 +38,35 @@
 
   @include media-breakpoint-down(sm) {
     display: none;
+  }
+}
+
+.welcome-screen__pointer-mouse {
+  position: relative;
+  display: block;
+  width: rem(24);
+  height: rem(41);
+  margin: auto;
+  border: 2px solid $accent-color;
+  border-radius: 18px / 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    height: 30%;
+    width: 2px;
+    background-color: $accent-color;
+    margin: auto;
+  }
+}
+
+.welcome-screen__pointer-arrow {
+  width: 10px;
+
+  &::before {
+    content: "";
   }
 }
