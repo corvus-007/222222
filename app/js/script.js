@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
+  var getTaxi = document.querySelector('.get-taxi');
+
+  if (getTaxi) {
+    setInterval(function () {
+      getTaxi.classList.add('get-taxi--animate');
+    }, 5200);
+
+    setInterval(function () {
+      getTaxi.classList.remove('get-taxi--animate');
+    }, 5000);
+  }
+
+
   var siteHeader = document.querySelector('.site-header');
 
   $(siteHeader).sticky({
@@ -14,19 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
       // autoplay: true,
       accessibility: false,
     });
-  }
 
-  var welcomeScreenPointer = document.querySelector('.welcome-screen__pointer');
+    var welcomeScreenPointer = document.querySelector('.welcome-screen__pointer');
 
-  welcomeScreenPointer.addEventListener('click', function (event) {
-    event.preventDefault();
+    welcomeScreenPointer.addEventListener('click', function (event) {
+      event.preventDefault();
 
-    var headerHeight = siteHeader.offsetHeight;
-    var clientHeight = document.documentElement.clientHeight;
-    $("html, body").animate({
-      scrollTop: (clientHeight - headerHeight)
+      var headerHeight = siteHeader.offsetHeight;
+      var clientHeight = document.documentElement.clientHeight;
+      $("html, body").animate({
+        scrollTop: (clientHeight - headerHeight)
+      });
     });
-  });
+  }
 
 
   var tabsTarifs = document.querySelector('.tabs-tarifs');
@@ -44,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dots: true,
     appendDots: '.app-slider-controls',
     dotsClass: 'app-slider-controls__list',
-    customPaging: function(slider, i) {
+    customPaging: function (slider, i) {
       var currentSlide = slider.$slides[i]
       var descriptionSlide = currentSlide.querySelector('.app-slider__description');
       var descriptionSlideText = descriptionSlide.textContent;
