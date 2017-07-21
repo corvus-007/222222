@@ -29,11 +29,10 @@
   font-family: $secondary-font;
   border: none;
   color: $white-color;
-
   background: none;
   text-align: left;
   text-transform: uppercase;
-  transition: $duration;
+  transition: ($duration * 1.5);
   user-select: none;
   cursor: pointer;
 
@@ -49,10 +48,12 @@
     background-clip: content-box;
     box-shadow: 0 0 0 8px rgba($white-color, 0.4), 0 0 0 4px rgba($white-color, 0.4);
     transition: ($duration * 1.5);
+    will-change: transform;
   }
 
   &:hover {
     opacity: 0.9;
+
   }
 
   &:focus {
@@ -69,6 +70,6 @@
 
   &::before {
     background-color: $white-color;
-    box-shadow: 0 0 0 10px rgba($white-color, 0.4), 0 0 0 5px rgba($white-color, 0.4);
+    transform: scale(1.2);
   }
 }
