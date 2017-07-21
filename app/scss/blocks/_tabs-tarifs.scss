@@ -194,8 +194,6 @@
   }
 }
 
-
-
 .tabs-tarifs__icon {
   max-width: 100%;
   height: auto;
@@ -207,7 +205,11 @@
 }
 
 .tabs-tarifs__label {
-  display: block;
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
 }
 
 .tabs-tarifs__pane {
