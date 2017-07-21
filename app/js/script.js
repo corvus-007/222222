@@ -49,6 +49,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var appSlider = document.querySelector('.app-slider');
+  var appSliderTouchId = document.querySelector('.app-slider-mocup-phone__touch-id');
+
+  if (appSlider) {
+    appSliderTouchId.addEventListener('click', function(event) {
+      event.preventDefault();
+      $(appSlider).slick('slickNext');
+    });
+  }
+
   $(appSlider).slick({
     accessibility: false,
     arrows: false,
