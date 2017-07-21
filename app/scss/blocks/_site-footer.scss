@@ -1,15 +1,19 @@
 .site-footer {
+  line-height: 1.2;
+  color: $gray-color-99;
   background-color: $black-color;
 }
 
 .site-footer__row {
+  padding-top: rem(25);
+  padding-bottom: rem(25);
 
   &--top {
     background-color: $gray-color-21;
   }
 
   &--bottom {
-
+    font-size: rem($font-size--small);
   }
 }
 
@@ -19,8 +23,111 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.site-footer__column {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
 }
 
 .site-footer__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(210);
+  padding: rem(12);
+  text-align: center;
+  font-family: $secondary-font;
+  font-size: rem($font-size--smaller);
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: normal;
+  outline: none;
+  user-select: none;
+  color: $white-color;
+  background-color: $gray-color-79;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  transition: $duration;
+  cursor: pointer;
 
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: darken( $gray-color-79, 5%);
+  }
+
+  &:active {
+    background-color: darken( $gray-color-79, 10%);
+  }
+}
+
+.site-footer__button-icon {
+  flex-shrink: 0;
+  margin-left: 0.5em;
+  fill: currentColor;
+}
+
+.site-footer__copy {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer__copy-logo {
+  margin-right: 0.5em;
+}
+
+.site-footer__developer {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer__developer-logo-wrapper {
+  flex-shrink: 0;
+  margin-right: 0.5em;
+  padding: rem(10);
+  border-radius: 50%;
+  background-color: $gray-color-39;
+}
+
+.site-footer__developer-logo {
+  width: rem(22);
+}
+
+.site-footer__developer-text {
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    color: $accent-color;
+    font-size: 1.2em;
+    animation: heartbeat 2.2s infinite;
+  }
+}
+
+.site-footer__developer-link {
+  color: $white-color;
+  text-decoration: underline;
+  transition: $duration;
+}
+
+@keyframes heartbeat {
+  0%, 40%, 80%, 100% {
+    transform: scale(.8);
+  }
+  20%, 60% {
+    transform: scale(1);
+  }
 }
