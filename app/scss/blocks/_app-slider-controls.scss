@@ -52,18 +52,14 @@
   }
 
   &:hover {
-    // opacity: 0.8;
-
-    &::before {
-      box-shadow: 0 0 0 10px rgba($white-color, 0.4), 0 0 0 5px rgba($white-color, 0.4);
-    }
+    opacity: 0.9;
   }
 
   &:focus {
     outline: none;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     white-space: nowrap;
   }
 }
@@ -73,5 +69,6 @@
 
   &::before {
     background-color: $white-color;
+    box-shadow: 0 0 0 10px rgba($white-color, 0.4), 0 0 0 5px rgba($white-color, 0.4);
   }
 }
