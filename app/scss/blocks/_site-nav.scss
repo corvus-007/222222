@@ -31,16 +31,16 @@
     justify-content: center;
     flex-grow: 1;
     padding: 0 rem(5);
+    color: $white-color;
     text-decoration: none;
     text-align: center;
     border: none;
-    transition: $duration;
-    color: $white-color;
+    transition: ($duration * 2);
 
     &:hover,
     &:focus {
-      background-color: $accent-color;
       color: $white-color;
+      background-color: $accent-color;
     }
   }
 
