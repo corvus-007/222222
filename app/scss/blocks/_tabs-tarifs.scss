@@ -63,6 +63,8 @@
 }
 
 .tabs-tarifs__pane {
-  padding-left: rem($grid-gutter-width);
-  padding-right: rem($grid-gutter-width);
+  @include media-breakpoint-up(lg) {
+    padding-left: rem($grid-gutter-width);
+    padding-right: rem($grid-gutter-width);
+  }
 }
