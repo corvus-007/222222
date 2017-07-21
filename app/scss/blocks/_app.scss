@@ -3,8 +3,9 @@
   align-items: center;
   flex-direction: column;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 
@@ -17,12 +18,35 @@
     margin-bottom: 0;
   }
 
+  &--download-apps {
+  }
+
   &--slider {
     min-width: rem(228px);
     justify-content: center;
   }
 
+  @include media-breakpoint-up(sm) {
+    &--slider {
+      margin-right: 2rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &--download-apps {
+      display: none;
+    }
+  }
+
   @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+
+    &--slider {
+      margin-right: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
     width: calc(100% / 3);
   }
 }
