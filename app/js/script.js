@@ -5,12 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (getTaxi) {
     setInterval(function () {
-      getTaxi.classList.add('get-taxi--animate');
-    }, 5200);
-
-    setInterval(function () {
       getTaxi.classList.remove('get-taxi--animate');
-    }, 5000);
+      getTaxi.offsetWidth = getTaxi.offsetWidth;
+      getTaxi.classList.add('get-taxi--animate');
+    }, 8888);
   }
 
 
