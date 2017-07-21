@@ -9,12 +9,12 @@ ul:not([class]) {
 
   li {
     position: relative;
-    padding-left: rem(35);
+    padding-left: rem(25);
 
     &::before {
       content: '';
       position: absolute;
-      left: rem(20);
+      left: 0;
       top: 0.5em;
       width: rem($dimensions-marker);
       height: rem($dimensions-marker);
