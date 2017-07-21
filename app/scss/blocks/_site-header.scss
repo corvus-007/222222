@@ -20,6 +20,11 @@
 }
 
 .site-header__column {
+  &--logo {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
   @include media-breakpoint-up(lg) {
     margin-right: 2rem;
 
