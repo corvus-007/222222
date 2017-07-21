@@ -61,6 +61,15 @@
       transition-delay: ($duration / 2);
     }
   }
+
+  @include media-breakpoint-down(xs) {
+    &:last-child {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
 }
 
 .tabs-tarifs__link {
@@ -216,5 +225,15 @@
   @include media-breakpoint-up(lg) {
     padding-left: rem($grid-gutter-width);
     padding-right: rem($grid-gutter-width);
+  }
+}
+
+.tabs-tarifs__pane-title {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    @include visuallyhidden();
   }
 }
