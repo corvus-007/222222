@@ -1,9 +1,6 @@
 .site-nav {
-  // font-family: $secondary-font;
-  // text-transform: uppercase;
-  // font-weight: 600;
-
   @include media-breakpoint-up(lg) {
+    display: flex;
     flex-grow: 1;
   }
 }
@@ -12,7 +9,7 @@
   @include clear-list();
 
   display: flex;
-  // font-size: rem($font-size--small);
+  flex-grow: 1;
   font-size: rem(16);
   letter-spacing: 0;
 
@@ -20,9 +17,7 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    // align-items: center;
     justify-content: center;
-    // margin-right: rem(45);
     position: relative;
 
     &:last-child {
@@ -31,8 +26,11 @@
   }
 
   a {
-    display: block;
-    padding: rem(19) rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 0 rem(5);
     text-decoration: none;
     text-align: center;
     border: none;
@@ -43,15 +41,6 @@
     &:focus {
       background-color: $accent-color;
       color: $white-color;
-    }
-
-    &::before {
-      // content: "";
-      position: absolute;
-      left: -0.7rem;
-      top: -1rem;
-      right: -0.7rem;
-      bottom: -1rem;
     }
   }
 
