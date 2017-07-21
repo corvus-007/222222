@@ -13,7 +13,10 @@
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
+  @include media-breakpoint-down(md) {
+    align-items: center;
+  }
 }
 
 .site-header__column {
@@ -27,6 +30,8 @@
 }
 
 .site-header__download-apps {
+  align-self: center;
+
   @include media-breakpoint-down(md) {
     display: none;
   }
