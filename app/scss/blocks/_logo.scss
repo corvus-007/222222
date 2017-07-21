@@ -1,0 +1,14 @@
+.logo {
+
+}
+
+.logo__link {
+  border: none;
+  text-decoration: none;
+}
+
+.logo__image {
+  @include media-breakpoint-down(sm) {
+    width: rem(55);
+  }
+}
