@@ -1,0 +1,52 @@
+.get-taxi {
+  position: fixed;
+  z-index: 12;
+  top: 50%;
+  left: 0;
+  transform-origin: 0 0;
+  transform: translateY(200%) rotate(-90deg);
+}
+
+.get-taxi__link {
+  display: flex;
+  padding-left: rem(15);
+  padding-right: rem(15);
+  font-weight: 500;
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  align-items: center;
+  color: $accent-color-2;
+  background-color: $warning-color;
+  border-radius: $border-radius;
+  transition: $duration;
+  transform-origin: 50% 0;
+  box-shadow: 0 1px 5px rgba($black-color, 0.2);
+}
+
+.get-taxi--animate .get-taxi__link{
+  animation: tada 1.5s;
+}
+
+.get-taxi__icon {
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+
+.get-taxi__label {
+
+}
+
+@keyframes tada {
+  0%, 100% {
+    transform: scale3d(1, 1, 1) rotate(0deg) translate3d(0, 0, 0);
+  }
+  10%, 20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 3deg) translate3d(0, 0, 0);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg) translate3d(0, 0, 0);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg) translate3d(0, 0, 0);
+  }
+}
