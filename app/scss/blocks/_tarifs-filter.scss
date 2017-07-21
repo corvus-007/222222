@@ -1,15 +1,22 @@
 .tarifs-filter {
   display: flex;
-  margin-bottom: rem($grid-gutter-width * 2.5);
-}
+  justify-content: space-around;
+  margin-bottom: rem($grid-gutter-width * 1);
 
-.tarifs-filter__column {
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-start;
+    margin-bottom: rem($grid-gutter-width * 2.5);
+  }
 }
 
 .tarifs-filter__list {
   @include clear-list();
 
-  margin-right: 4.3vw;
+  margin-right: 2vw;
   font-weight: 500;
   font-size: rem($font-size--smaller);
   font-family: $secondary-font;
@@ -17,6 +24,17 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 3vw;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    margin-right: 4.3vw;
   }
 }
 
@@ -26,6 +44,18 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include media-breakpoint-up(sm) {
+    margin-right: 1.2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 0;
+  }
 }
 
 .tarifs-filter__link {
@@ -33,6 +63,7 @@
   align-items: center;
   color: $gray-color-184;
   transition: $duration;
+  white-space: nowrap;
 
   &:hover,
   &:focus {
