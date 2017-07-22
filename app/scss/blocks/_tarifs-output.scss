@@ -39,24 +39,44 @@
 
 .tarifs-output__column {
   flex-grow: 1;
-  width: 50%;
-  text-align: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
 
   @include media-breakpoint-up(sm) {
     width: auto;
-    text-align: left;
+    margin-bottom: 0;
   }
 }
 
 .tarifs-output__item {
-  margin-bottom: rem(20);
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+    margin-bottom: rem(20);
+  }
 }
 
 .tarifs-output__label {
   display: block;
-  margin-bottom: 0.3em;
+  width: 50%;
+  padding-right: 1rem;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: right;
+  box-sizing: border-box;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    padding-right: 0;
+    text-align: left;
+  }
 
   @include media-breakpoint-up(md) {
     margin-bottom: 0;
@@ -64,15 +84,15 @@
 }
 
 .tarifs-output__value {
-  display: block;
-  align-items: baseline;
   display: flex;
+  align-items: baseline;
+  width: 50%;
   font-weight: 300;
-  font-size: rem($font-size--large);
-  line-height: 1;
+  font-size: rem(28);
   letter-spacing: 0;
 
   @include media-breakpoint-up(sm) {
+    width: auto;
     font-size: rem(32);
   }
 
@@ -82,8 +102,10 @@
 }
 
 .tarifs-output__value-unit {
+  margin-left: 0.1em;
 
   @include media-breakpoint-up(md) {
+    margin-left: 0;
     font-size: rem(24);
   }
 }
