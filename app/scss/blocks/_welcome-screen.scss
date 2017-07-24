@@ -6,6 +6,14 @@
   padding-top: 5vh;
   padding-bottom: 10vh;
   box-sizing: border-box;
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 2vh;
+  }
+
+  @media (max-height: 567px) {
+    padding-bottom: 10px;
+  }
 }
 
 .welcome-screen__overlay {
