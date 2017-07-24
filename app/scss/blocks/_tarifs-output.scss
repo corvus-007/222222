@@ -32,6 +32,10 @@
   font-size: rem($font-size--smaller);
   line-height: 1.2;
 
+  &--hidden {
+    display: none;
+  }
+
   @include media-breakpoint-up(lg) {
     margin-left: 1rem;
   }
