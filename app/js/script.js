@@ -13,14 +13,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   var siteHeader = document.querySelector('.site-header');
+  var siteHeaderHeight = siteHeader.offsetHeight;
 
-  $(siteHeader).sticky({
-    zIndex: 20
-  });
 
+  // $(siteHeader).sticky({
+  //   zIndex: 20
+  // });
+
+  if (!document.body.classList.contains('homepage')) {
+    document.body.style.paddingTop = siteHeaderHeight + 'px';
+  }
+
+  var welcomeScreen = document.querySelector('.welcome-screen');
   var welcomeSlider = document.querySelector('.welcome-slider');
 
-  if (welcomeSlider) {
+  if (welcomeScreen) {
+
+    var gutterTopScreen = 0;
+    if (window.matchMedia("(max-height: 567px)").matches) {
+      gutterTopScreen = 10;
+    }
+    welcomeScreen.style.paddingTop = (siteHeaderHeight + gutterTopScreen) + 'px';
+
     $(welcomeSlider).slick({
       // autoplay: true,
       accessibility: false,
@@ -42,9 +56,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var tabsTarifs = document.querySelector('.tabs-tarifs');
 
+  function updateTarifsFilter() {
+    var $pane = $('.tabs-tarifs').find('.tabs-tarifs__pane:visible');
+
+    var $tarifsPane = $pane;
+    var $tarifsOutputTables = $('.tarifs-output__table', $tarifsPane);
+    var $cyrrentTarifsOutputTable = $('.tarifs-output__table');
+    var $tarifsFilterList = $tarifsPane.find('.tarifs-filter__list');
+    var $currentTarifsItem = $tarifsPane.find('.tarifs-filter__item');
+    var $trarisFilterItems = $('.tarifs-filter__item', $tarifsFilterList);
+
+    // $currentTarifsItem.addClass('tarifs-filter__item--active');
+    // $trarisFilterItems.not($currentTarifsItem).removeClass('tarifs-filter__item--active');
+
+    var activeFilters = $('.tarifs-filter__item--active', $tarifsPane);
+    var filterString = Array.prototype.reduce.call(activeFilters, function (prevValue, item) {
+      return prevValue + item.querySelector('.tarifs-filter__link').dataset.filter;
+    }, '');
+
+    console.log(filterString);
+
+    if (filterString) {
+      $tarifsOutputTables.addClass('tarifs-output__table--hidden');
+      $tarifsOutputTables.filter('[data-taxi-id="' + filterString + '"]').removeClass('tarifs-output__table--hidden');
+    }
+  }
+
   if (tabsTarifs) {
-    $(tabsTarifs).tabslet({
-      animation: true
+    $(tabsTarifs).tabslet();
+
+    $(tabsTarifs).on('_after', function () {
+      updateTarifsFilter();
+    });
+
+    updateTarifsFilter();
+
+    $(tabsTarifs).on('click', '.tarifs-filter__link', function (event) {
+      event.preventDefault();
+      var $tarifsPane = $(this).closest('.tabs-tarifs__pane');
+      var $tarifsOutputTables = $('.tarifs-output__table', $tarifsPane);
+      var $cyrrentTarifsOutputTable = $('.tarifs-output__table');
+      var $tarifsFilterList = $(this).closest('.tarifs-filter__list');
+      var $currentTarifsItem = $(this).closest('.tarifs-filter__item');
+      var $trarisFilterItems = $('.tarifs-filter__item', $tarifsFilterList);
+
+      $currentTarifsItem.addClass('tarifs-filter__item--active');
+      $trarisFilterItems.not($currentTarifsItem).removeClass('tarifs-filter__item--active');
+
+      var activeFilters = $('.tarifs-filter__item--active', $tarifsPane);
+      var filterString = Array.prototype.reduce.call(activeFilters, function (prevValue, item) {
+        return prevValue + item.querySelector('.tarifs-filter__link').dataset.filter;
+      }, '');
+
+      console.log(filterString);
+
+      if (filterString) {
+        $tarifsOutputTables.addClass('tarifs-output__table--hidden');
+        $tarifsOutputTables.filter('[data-taxi-id="' + filterString + '"]').removeClass('tarifs-output__table--hidden');
+      }
     });
   }
 
@@ -52,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var appSliderTouchId = document.querySelector('.app-slider-mocup-phone__touch-id');
 
   if (appSlider) {
-    appSliderTouchId.addEventListener('click', function(event) {
+    appSliderTouchId.addEventListener('click', function (event) {
       event.preventDefault();
       $(appSlider).slick('slickNext');
     });
