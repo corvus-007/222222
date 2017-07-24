@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Тарифы и услуги</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+  <div class="site-wrapper">
+    @@include('blocks/site-header.html')
+
+    <main class="main">
+      <article class="page__content">
+        <header class="page__header">
+          <div class="page__headline">
+            <h1 class="page__title">Тарифы и услуги</h1>
+            <div class="page__intro">
+              <p>“Городское такси” содержит огромное количество автомобилей для удовлетворения любой потребности. Для уточнения стоимости перевозки, выберите интересующий вас тип транспорта.</p>
+            </div>
+          </div>
+        </header>
+        <ul class="page__breadcrumbs breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Категория</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Подкатегория</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link">Заголовок</a>
+          </li>
+        </ul>
+
+        <div class="page__text container">
+        </div>
+      </article>
+    </main>
+
+    @@include('blocks/site-footer.html')
+  </div>
+  @@include('blocks/site-scripts.html')
+</body>
+</html>
