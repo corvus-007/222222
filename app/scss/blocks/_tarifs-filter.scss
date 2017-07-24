@@ -45,6 +45,10 @@
     margin-bottom: 0;
   }
 
+  &--active {
+    pointer-events: none;
+  }
+
   @include media-breakpoint-up(sm) {
     margin-right: 1.2rem;
 
