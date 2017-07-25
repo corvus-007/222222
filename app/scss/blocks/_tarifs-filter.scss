@@ -3,6 +3,10 @@
   justify-content: space-around;
   margin-bottom: rem($grid-gutter-width * 1);
 
+  &:empty {
+    display: none;
+  }
+
   @include media-breakpoint-up(md) {
     justify-content: space-between;
   }
