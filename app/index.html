@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <title>Главная — 222222</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="homepage">
+  @@include('blocks/site-header.html')
   <div class="site-wrapper">
     <div class="welcome-screen">
       <div class="welcome-overlay">
@@ -16,9 +19,6 @@
           <source src="Highlights.mp4" type="video/mp4">
         </video>
       </div>
-
-      @@include('blocks/site-header.html')
-
       <div class="welcome-screen__slider">
         <div class="welcome-slider base-slider">
           <div class="welcome-slider__item welcome-slider__item--type-promo">
@@ -68,7 +68,7 @@
 
       <span class="welcome-screen__pointer">
         <span class="welcome-screen__pointer-mouse"></span>
-        <span class="welcome-screen__pointer-arrow"></span>
+      <span class="welcome-screen__pointer-arrow"></span>
       </span>
     </div>
 
@@ -150,23 +150,23 @@
                 <div class="tarifs-filter">
                   <ul class="tarifs-filter__list">
                     <li class="tarifs-filter__item tarifs-filter__item--active">
-                      <a class="tarifs-filter__link" href="#">
+                      <a class="tarifs-filter__link" href="#" data-filter="">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#sun"></use>
                         </svg>
                         <span class="tarifs-filter__label">Дневной тариф</span>
                       </a>
                     </li>
-                    <li class="tarifs-filter__item">
+                    <!-- <li class="tarifs-filter__item">
                       <a class="tarifs-filter__link" href="#">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#cloudy-3"></use>
                         </svg>
                         <span class="tarifs-filter__label">Вечерний тариф</span>
                       </a>
-                    </li>
+                    </li> -->
                     <li class="tarifs-filter__item">
-                      <a class="tarifs-filter__link" href="#">
+                      <a class="tarifs-filter__link" href="#" data-filter="night">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#moon-2"></use>
                         </svg>
@@ -176,7 +176,7 @@
                   </ul>
                   <ul class="tarifs-filter__list">
                     <li class="tarifs-filter__item tarifs-filter__item--active">
-                      <a class="tarifs-filter__link" href="#">
+                      <a class="tarifs-filter__link" href="#" data-filter="city">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#university"></use>
                         </svg>
@@ -184,7 +184,7 @@
                       </a>
                     </li>
                     <li class="tarifs-filter__item">
-                      <a class="tarifs-filter__link" href="#">
+                      <a class="tarifs-filter__link" href="#" data-filter="out">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#garden"></use>
                         </svg>
@@ -194,7 +194,7 @@
                   </ul>
                 </div>
                 <div class="tarifs__footnote">
-                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться  у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
+                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
                 </div>
               </div>
               <div class="tarifs__column tarifs__column--output">
@@ -202,12 +202,12 @@
                   <div class="tarifs-output__notice">
                     <p>В выходные и праздничные дни круглосуточно действует ночной тариф</p>
                   </div>
-                  <div class="tarifs-output__table">
+                  <div data-taxi-id="city" class="tarifs-output__table">
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
-                          Посадка
-                        </span>
+                        Посадка
+                      </span>
                         <span class="tarifs-output__value">
                           0
                           <span class="tarifs-output__value-unit">₽</span>
@@ -217,8 +217,8 @@
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item tarifs-output__item--accent">
                         <span class="tarifs-output__label">
-                          Первые 4 км
-                        </span>
+                        Первые 4 км
+                      </span>
                         <span class="tarifs-output__value">
                           22
                           <span class="tarifs-output__value-unit">₽/км</span>
@@ -226,8 +226,8 @@
                       </div>
                       <div class="tarifs-output__item tarifs-output__item--accent">
                         <span class="tarifs-output__label">
-                          Далее
-                        </span>
+                        Далее
+                      </span>
                         <span class="tarifs-output__value">
                           15
                           <span class="tarifs-output__value-unit">₽/км</span>
@@ -237,8 +237,8 @@
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
-                          Ожидание
-                        </span>
+                        Ожидание
+                      </span>
                         <span class="tarifs-output__value">
                           200
                           <span class="tarifs-output__value-unit">₽/час</span>
@@ -248,23 +248,217 @@
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
-                          Минимум
-                        </span>
+                        Минимум
+                      </span>
                         <span class="tarifs-output__value">
-                          70
+                          80
                           <span class="tarifs-output__value-unit">₽</span>
                         </span>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="tarifs__more">
-                  <a class="tarifs__more-link" href="#">
-                    Подробнее о тарифах
-                    <svg class="tarifs__more-icon" width="18" height="18">
-                      <use xlink:href="images/symbols.svg#arrow-next"></use>
-                    </svg>
-                  </a>
+                  <div data-taxi-id="out" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Посадка
+                      </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                          Поездка
+                        </span>
+                        <span class="tarifs-output__value">
+                          17
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          200
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          100
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-taxi-id="holiday" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Посадка
+                      </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 4 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          23
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          16
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          200
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          80
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-taxi-id="nightcity" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Посадка
+                      </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 4 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          23
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          16
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          210
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          90
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-taxi-id="nightout" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Посадка
+                      </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                          Поездка
+                        </span>
+                        <span class="tarifs-output__value">
+                          18
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          220
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          100
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -294,7 +488,7 @@
                   </ul>
                 </div>
                 <div class="tarifs__footnote">
-                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться  у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
+                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
                 </div>
               </div>
               <div class="tarifs__column tarifs__column--output">
@@ -365,7 +559,7 @@
             <div class="tarifs__columns-items">
               <div class="tarifs__column tarifs__column--filter">
                 <div class="tarifs__footnote">
-                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться  у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
+                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
                 </div>
               </div>
               <div class="tarifs__column tarifs__column--output">
@@ -456,7 +650,7 @@
                   </ul>
                 </div>
                 <div class="tarifs__footnote">
-                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться  у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
+                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
                 </div>
               </div>
               <div class="tarifs__column tarifs__column--output">
@@ -527,7 +721,7 @@
             <div class="tarifs__columns-items">
               <div class="tarifs__column tarifs__column--filter">
                 <div class="tarifs__footnote">
-                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться  у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
+                  <p>По любым вопросам относительно тарифов и дополнительных услуг вы можете проконсультироваться у операторов по телефонам (4832) 222-222 или (4832) 302-302</p>
                 </div>
               </div>
               <div class="tarifs__column tarifs__column--output">
@@ -604,7 +798,6 @@
           <p>Вызвать такси с помощью нашего мобильного приложения – проще простого! Скачивай в App Store и Google Play уже сейчас.</p>
         </div>
       </header>
-
       <div class="app container">
         <div class="app__column app__column--download-apps">
           <div class="app__download-apps download-apps download-apps--large">
@@ -626,24 +819,29 @@
           <div class="app-slider-mocup-phone">
             <div class="app-slider">
               <div class="app-slider__item">
-                <img class="app-slider__image" src="http://placehold.it/200x356/00ADB5/fff" srcset="http://placehold.it/400x712/00ADB5/fff 2x" alt="">
-                <div class="app-slider__description">Удобный выбор пунктов отправки и назначения</div>
+                <img class="app-slider__image" src="http://placehold.it/200x356/00ADB5/fff" srcset="http://placehold.it/400x712/00ADB5/fff 2x"
+                  alt="">
+                <span class="app-slider__description">Удобный выбор пунктов отправки и назначения</span>
               </div>
               <div class="app-slider__item">
-                <img class="app-slider__image" src="http://placehold.it/200x356/F9ED69/fff" srcset="http://placehold.it/400x712/F9ED69/fff 2x" alt="">
-                <div class="app-slider__description">Отслеживание автомобиля в режиме реального времени</div>
+                <img class="app-slider__image" src="http://placehold.it/200x356/F9ED69/fff" srcset="http://placehold.it/400x712/F9ED69/fff 2x"
+                  alt="">
+                <span class="app-slider__description">Отслеживание автомобиля в режиме реального времени</span>
               </div>
               <div class="app-slider__item">
-                <img class="app-slider__image" src="http://placehold.it/200x356/F08A5D/fff" srcset="http://placehold.it/400x712/F08A5D/fff 2x" alt="">
-                <div class="app-slider__description">Привязка банковской карты</div>
+                <img class="app-slider__image" src="http://placehold.it/200x356/F08A5D/fff" srcset="http://placehold.it/400x712/F08A5D/fff 2x"
+                  alt="">
+                <span class="app-slider__description">Привязка банковской карты</span>
               </div>
               <div class="app-slider__item">
-                <img class="app-slider__image" src="http://placehold.it/200x356/B83B5E/fff" srcset="http://placehold.it/400x712/B83B5E/fff 2x" alt="">
-                <div class="app-slider__description">Сохранение истории прошлых поездок</div>
+                <img class="app-slider__image" src="http://placehold.it/200x356/B83B5E/fff" srcset="http://placehold.it/400x712/B83B5E/fff 2x"
+                  alt="">
+                <span class="app-slider__description">Сохранение истории прошлых поездок</span>
               </div>
               <div class="app-slider__item">
-                <img class="app-slider__image" src="http://placehold.it/200x356/6A2C70/fff" srcset="http://placehold.it/400x712/6A2C70/fff 2x" alt="">
-                <div class="app-slider__description">Информация о количестве бонусных баллов</div>
+                <img class="app-slider__image" src="http://placehold.it/200x356/6A2C70/fff" srcset="http://placehold.it/400x712/6A2C70/fff 2x"
+                  alt="">
+                <span class="app-slider__description">Информация о количестве бонусных баллов</span>
               </div>
             </div>
             <button class="app-slider-mocup-phone__touch-id" type="button">Следующий слайд</button>
@@ -654,9 +852,9 @@
         </div>
       </div>
     </section>
-
     @@include('blocks/site-footer.html')
   </div>
   @@include('blocks/site-scripts.html')
 </body>
+
 </html>
