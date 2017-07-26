@@ -43,6 +43,7 @@
   cursor: pointer;
   outline: none;
   transition: $duration;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   &:hover,
   &:focus {

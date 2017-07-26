@@ -1,14 +1,16 @@
 .custom-ul,
 ul:not([class]) {
-  $dimensions-marker: 8;
+  $dimensions-marker: 8px;
 
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+  padding-left: rem(40);
   list-style: none;
 
   li {
     position: relative;
+    margin-bottom: 0.25rem;
     padding-left: rem(25);
 
     &::before {
@@ -16,11 +18,19 @@ ul:not([class]) {
       position: absolute;
       left: 0;
       top: 0.5em;
-      width: rem($dimensions-marker);
-      height: rem($dimensions-marker);
+      width: $dimensions-marker;
+      height: $dimensions-marker;
       box-sizing: border-box;
-      border-radius: 50%;
+      border-radius: 100%;
       background-color: $accent-color;
     }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: rem(20);
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-left: 0;
   }
 }

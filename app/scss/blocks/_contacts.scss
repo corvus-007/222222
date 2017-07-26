@@ -1,0 +1,18 @@
+.contacts {
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+}
+
+.contacts__column {
+  margin-bottom: rem($grid-gutter-width * 1.5);
+
+  @include media-breakpoint-up(md) {
+    width: calc((100% - #{rem($grid-gutter-width * 3)}) / 2);
+    margin-right: rem($grid-gutter-width * 3);
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}

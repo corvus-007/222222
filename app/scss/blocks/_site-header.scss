@@ -25,11 +25,25 @@
     margin-bottom: 8px;
   }
 
+  &--get-taxi {
+    margin-right: 0;
+  }
+
   @include media-breakpoint-up(lg) {
     margin-right: 2rem;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &--get-taxi {
+      margin-right: 0;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &--nav {
+      order: 1;
     }
   }
 }

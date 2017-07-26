@@ -5,7 +5,7 @@
         <img class="logo__image" src="images/logo.svg" width="90" alt="Логотип компании «Городское Такси»">
       </a>
     </div>
-    <nav class="site-header__column site-nav">
+    <nav class="site-header__column site-header__column--nav site-nav">
       <button class="site-nav__toggle" type="button">
         Меню
         <svg class="site-nav__toggle-icon" width="32" height="32">
@@ -20,6 +20,14 @@
         <li><a href="#">Контакты</a></li>
       </ul>
     </nav>
+    <div class="site-header__column site-header__column--get-taxi get-taxi">
+      <a class="get-taxi__link" href="#">
+        <svg class="get-taxi__icon" width="48" height="48">
+          <use xlink:href="images/symbols.svg#taxi"></use>
+        </svg>
+        <span class="get-taxi__label">Вызвать такси</span>
+      </a>
+    </div>
     <div class="site-header__column site-header__download-apps download-apps">
       <ul class="download-apps__list">
         <li class="download-apps__item">

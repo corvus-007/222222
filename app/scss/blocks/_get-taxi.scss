@@ -1,10 +1,12 @@
 .get-taxi {
-  position: fixed;
-  z-index: 12;
-  top: 50%;
-  left: 0;
-  transform-origin: 0 0;
-  transform: translateY(200%) rotate(-90deg);
+  @include media-breakpoint-up(lg) {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 12;
+    transform-origin: 0 0;
+    transform: translateY(200%) rotate(-90deg);
+  }
 }
 
 .get-taxi__link {
@@ -21,15 +23,29 @@
   transition: $duration;
   transform-origin: 50% 0;
   box-shadow: 0 1px 5px rgba($black-color, 0.2);
+
+  @include media-breakpoint-up(lg) {
+  }
+
+  @include media-breakpoint-down(md) {
+    border-radius: 50px;
+  }
 }
 
 .get-taxi--animate .get-taxi__link{
-  animation: tada 1.5s;
+  @include media-breakpoint-up(lg) {
+    animation: tada 1.5s;
+  }
 }
 
 .get-taxi__icon {
   margin-right: 0.5rem;
   fill: currentColor;
+
+  @include media-breakpoint-down(md) {
+    width: rem(36);
+    height: rem(36);
+  }
 }
 
 .get-taxi__label {

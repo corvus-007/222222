@@ -1,0 +1,75 @@
+.faq {
+  dt {
+    position: relative;
+    margin: 0;
+    padding-left: rem(25);
+    padding-top: rem(13);
+    padding-right: rem($grid-gutter-width * 2.5);
+    padding-bottom: rem(13);
+    font-weight: 700;
+    border-radius: $border-radius;
+    background-color: $gray-color-245;
+    cursor: pointer;
+    transition: $duration;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: rem($grid-gutter-width * 2);
+      background-color: $black-color;
+      border-radius: 0 $border-radius $border-radius 0;
+      transition: $duration;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1.45rem;
+      right: rem($grid-gutter-width * 0.85);
+      width: 10px;
+      height: 10px;
+      border: 1px solid $white-color;
+      box-sizing: border-box;
+      border-top: none;
+      border-left: none;
+      transform: rotate(-45deg);
+      transition: $duration;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    & ~ dt {
+      margin-top: rem(20);
+    }
+  }
+
+  .is-opened {
+    color: $accent-color;
+    border-bottom-color: transparent;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      border-color: $black-color;
+    }
+  }
+
+  dd {
+    margin: 0;
+    padding-left: rem($grid-gutter-width * 2);
+    padding-top: ($grid-gutter-width / 3);
+    padding-right: rem($grid-gutter-width / 1);
+    padding-bottom: ($grid-gutter-width / 2);
+    background-color: $gray-color-245;
+    border-radius: $border-radius;
+    will-change: height;
+  }
+}

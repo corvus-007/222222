@@ -1,0 +1,38 @@
+.tarifs-table {
+  font-size: 1rem;
+
+  th {
+    font-weight: 700;
+  }
+
+  thead {
+    background-color: $black-color;
+    color: $white-color;
+
+    th {
+      text-transform: uppercase;
+      vertical-align: baseline;
+    }
+
+    tr:nth-child(2) {
+      background-color: $gray-color-66;
+      th {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-weight: 400;
+        font-size: rem(13);
+        text-transform: none;
+      }
+    }
+  }
+
+  tbody {
+    th {
+      background-color: $gray-color-224;
+    }
+
+    td {
+      font-size: rem($font-size--large);
+    }
+  }
+}

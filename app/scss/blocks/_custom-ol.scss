@@ -1,25 +1,31 @@
-.custom-ol {
+.custom-ol,
+ol:not([class]) {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+  padding-left: rem(40);
   list-style: none;
   counter-reset: ol-list;
 
   li {
     position: relative;
-    padding-left: rem(35);
+    margin-bottom: 0.2rem;
+    padding-left: rem(25);
 
     &::before {
       counter-increment: ol-list;
       content: counter(ol-list, decimal-leading-zero);
       position: absolute;
-      left: rem(10);
-      // top: 0em;
-      font-family: 'Roboto Mono', monospace;
-      color: $accent-color;
-      text-align: center;
-      border-radius: 50%;
+      left: -0.4rem;
       box-sizing: border-box;
     }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: rem(20);
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-left: 0;
   }
 }

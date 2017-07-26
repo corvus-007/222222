@@ -1,0 +1,10 @@
+.table-footnote {
+  margin-top: 0.75rem;
+  line-height: 1.2;
+  font-size: rem(13);
+
+  @include media-breakpoint-up(md) {
+    width: 50%;
+    margin-left: auto;
+  }
+}

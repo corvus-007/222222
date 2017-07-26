@@ -1,5 +1,5 @@
 .form-item {
-  margin-bottom: rem(15);
+  margin-bottom: rem($grid-gutter-width);
   display: block;
 }
 
@@ -7,42 +7,50 @@
   display: inline-block;
   padding-bottom: 0.3em;
   vertical-align: middle;
+  font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
 }
 
 .form-label--required::after {
+  content: "*";
   display: inline-block;
   margin-left: 0.2em;
-  color: #F44336;
-  content: "*";
+  color: $danger-color;
 }
 
 .form-control {
-  padding: em(14, 18) em(24, 18);
+  padding: rem(12) 0;
   width: 100%;
   outline: none;
-  border: 2px solid transparent;
-  background: #edeef1;
+  border: none;
+  // border: 2px solid transparent;
+
+  border-bottom: 2px solid $gray-color-184;
+  background: transparent;
   font: inherit;
-  font-size: rem(18);
+  font-size: rem($font-size);
   line-height: normal;
   box-sizing: border-box;
-  transition: 0.3s;
+  transition: $duration;
+
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+
+  &:focus {
+    border-bottom-color: currentColor;
+  }
+
+  &::placeholder {
+    color: $muted-color;
+    opacity: 1;
+  }
 }
 
 textarea.form-control {
   max-height: 200px;
   resize: vertical;
-}
-
-.form-control:hover {
-  background: #f9f9f9;
-}
-
-.form-control:focus {
-  border-color: mix(#000, #e3e3e1, 7%);
-  background: #fff;
 }
 
 .form-submit-wrapper {
@@ -51,9 +59,11 @@ textarea.form-control {
 }
 
 .form-submit {
-  width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
+  @include media-breakpoint-down(xs) {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+  }
 }
 
 .form-submit:hover,
@@ -67,7 +77,7 @@ textarea.form-control {
 
 .form-note {
   margin-top: rem(15);
-  font-size: rem(15.5);
+  font-size: rem(12);
   p {
     margin-bottom: 0;
   }
@@ -129,3 +139,52 @@ span.wpcf7-not-valid-tip {
     color: mix(#000, $success-color, 60%);
   }
 }
+
+
+// .wpcf7-form-control-wrap {
+
+//   .wpcf7-form-control {
+//     display: flex;
+//   }
+
+//   .wpcf7-list-item {
+//     margin: 0;
+//   }
+
+//   input {
+//     @include visuallyhidden();
+//   }
+
+//   .wpcf7-list-item-label {
+//     position: relative;
+//     display: inline-block;
+//     padding-left: rem(15);
+//     vertical-align: middle;
+//     cursor: pointer;
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       left: 0;
+//       top: 0;
+//       bottom: 0;
+//       width: rem(12);
+//       height: rem(12);
+//       margin: auto;
+//       background-color: #8E9FE6;
+//     }
+//   }
+
+//   input:hover + .wpcf7-list-item-label {
+//     opacity: 0.6;
+//   }
+
+//   input:focus + .wpcf7-list-item-label {
+//     filter: drop-shadow(0 0 2px rgba($black-color, 0.5));
+//   }
+
+//   input:checked + .wpcf7-list-item-label {
+//     opacity: 1;
+//     background-image: url("images/star--active.svg");
+//   }
+// }

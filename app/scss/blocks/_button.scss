@@ -1,5 +1,5 @@
 @mixin make-button() {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   min-width: 260px;
@@ -7,7 +7,7 @@
   text-align: center;
   font-family: inherit;
   font-size: rem($font-size);
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
   line-height: normal;
@@ -15,7 +15,7 @@
   user-select: none;
   background-color: transparent;
   border: 3px solid transparent;
-  border-radius: 60px;
+  border-radius: $border-radius;
   box-sizing: border-box;
   transition: $duration;
   cursor: pointer;
@@ -32,17 +32,17 @@
 }
 
 @mixin make-button-color-default() {
-  color: #2e292f;
-  background-color: $secondary-color;
+  color: $white-color;
+  background-color: $accent-color;
 
   &:hover,
   &:focus {
-    color: #2e292f;
-    background-color: mix($white-color, $secondary-color, 15%);
+    color: $white-color;
+    background-color: mix($white-color, $accent-color, 15%);
   }
 
   &:active {
-    background-color: mix($base-color, $secondary-color, 15%);
+    background-color: mix($base-color, $accent-color, 15%);
   }
 }
 

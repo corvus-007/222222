@@ -1,0 +1,20 @@
+.contacts-form {
+
+}
+
+.contacts-form__submit-wrapper {
+  text-align: right;
+}
+
+.contacts__form-note {
+  text-align: right;
+  margin: 0;
+  margin-top: rem($grid-gutter-width / 1);
+  margin-left: rem($grid-gutter-width / 0.5);
+  // margin-right: rem($grid-gutter-width / 0.5);
+  font-size: rem($font-size--smaller);
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

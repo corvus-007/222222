@@ -1,0 +1,16 @@
+.contacts-info {
+
+}
+
+.contacts-info__item {
+  margin-bottom: rem($grid-gutter-width);
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contacts-info__caption {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}

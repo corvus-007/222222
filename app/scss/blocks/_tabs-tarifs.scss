@@ -18,6 +18,17 @@
 
   @include media-breakpoint-down(xs) {
     font-size: rem(10);
+    border: none;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: rem(-$grid-gutter-width / 2);
+    margin-right: rem(-$grid-gutter-width / 2);
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-left: rem(-$grid-gutter-width);
+    margin-right: rem(-$grid-gutter-width);
   }
 }
 
@@ -86,7 +97,31 @@
   }
 
   &:hover {
-    filter: brightness(120%);
+    // filter: brightness(120%);
+  }
+
+  @include media-breakpoint-down(xs) {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      background-color: $gray-color-245;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform $duration;
+    }
+
+    & > * {
+      position: relative;
+    }
   }
 }
 
@@ -101,105 +136,114 @@
 .active .tabs-tarifs__link {
   color: $accent-color;
   cursor: default;
-}
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
-.tabs-tarifs__item:nth-child(1).active ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 10%;
-  }
-
-  &::after {
-    left: 11%;
+  @include media-breakpoint-down(xs) {
+    &::before {
+      transform: scale(1);
+    }
   }
 }
 
-.tabs-tarifs__item:nth-child(2).active ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 32%;
+@include media-breakpoint-up(sm) {
+  .tabs-tarifs__item:nth-child(1).active ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 10%;
+    }
+
+    &::after {
+      left: 11%;
+    }
   }
 
-  &::after {
-    left: 29%;
-  }
-}
+  .tabs-tarifs__item:nth-child(2).active ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 32%;
+    }
 
-.tabs-tarifs__item:nth-child(3).active ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 53%;
-  }
-
-  &::after {
-    left: 50%;
-  }
-}
-
-.tabs-tarifs__item:nth-child(4).active ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 71%;
+    &::after {
+      left: 29%;
+    }
   }
 
-  &::after {
-    left: 68%;
-  }
-}
+  .tabs-tarifs__item:nth-child(3).active ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 53%;
+    }
 
-.tabs-tarifs__item:nth-child(5).active:last-child {
-  &::before {
-    left: 90%;
-  }
-
-  &::after {
-    left: 93%;
-  }
-}
-
-.tabs-tarifs__item:nth-child(1):hover ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 10%;
+    &::after {
+      left: 50%;
+    }
   }
 
-  &::after {
-    left: 11%;
-  }
-}
+  .tabs-tarifs__item:nth-child(4).active ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 71%;
+    }
 
-.tabs-tarifs__item:nth-child(2):hover ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 32%;
-  }
-
-  &::after {
-    left: 29%;
-  }
-}
-
-.tabs-tarifs__item:nth-child(3):hover ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 53%;
+    &::after {
+      left: 68%;
+    }
   }
 
-  &::after {
-    left: 50%;
-  }
-}
+  .tabs-tarifs__item:nth-child(5).active:last-child {
+    &::before {
+      left: 90%;
+    }
 
-.tabs-tarifs__item:nth-child(4):hover ~ .tabs-tarifs__item:last-child {
-  &::before {
-    left: 71%;
-  }
-
-  &::after {
-    left: 68%;
-  }
-}
-
-.tabs-tarifs__item:nth-child(5):hover.tabs-tarifs__item:last-child {
-  &::before {
-    left: 90%;
+    &::after {
+      left: 93%;
+    }
   }
 
-  &::after {
-    left: 93%;
+  .tabs-tarifs__item:nth-child(1):hover ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 10%;
+    }
+
+    &::after {
+      left: 11%;
+    }
+  }
+
+  .tabs-tarifs__item:nth-child(2):hover ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 32%;
+    }
+
+    &::after {
+      left: 29%;
+    }
+  }
+
+  .tabs-tarifs__item:nth-child(3):hover ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 53%;
+    }
+
+    &::after {
+      left: 50%;
+    }
+  }
+
+  .tabs-tarifs__item:nth-child(4):hover ~ .tabs-tarifs__item:last-child {
+    &::before {
+      left: 71%;
+    }
+
+    &::after {
+      left: 68%;
+    }
+  }
+
+  .tabs-tarifs__item:nth-child(5):hover.tabs-tarifs__item:last-child {
+    &::before {
+      left: 90%;
+    }
+
+    &::after {
+      left: 93%;
+    }
   }
 }
 
@@ -222,10 +266,7 @@
 }
 
 .tabs-tarifs__pane {
-  @include media-breakpoint-up(lg) {
-    padding-left: rem($grid-gutter-width);
-    padding-right: rem($grid-gutter-width);
-  }
+  @include make-textual();
 }
 
 .tabs-tarifs__pane-title {

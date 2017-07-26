@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Контакты</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAkCddAnkaL2nuyq90XZa2cn0ncCFjyEA4"></script>
+</head>
+
+<body class="page">
+  <div class="site-wrapper">
+    @@include('blocks/site-header.html')
+    <main class="main">
+      <article class="page__content">
+        <header class="page__header">
+          <div class="page__headline">
+            <h1 class="page__title">Контакты</h1>
+            <div class="page__intro">
+              <p>“Городское такси” содержит огромное количество автомобилей для удовлетворения любой потребности. Для уточнения стоимости перевозки, выберите интересующий вас тип транспорта.</p>
+            </div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="contacts">
+            <div class="contacts__column">
+              <div class="contacts-info">
+                <div class="contacts-info__item">
+                  <p class="contacts-info__caption"><b>Адрес:</b></p>
+                  <p>241050, г. Брянск, Советский р-н, проспект Станке Димитрова, д. 20</p>
+                </div>
+                <div class="contacts-info__item">
+                  <p class="contacts-info__caption"><b>График работы:</b></p>
+                  <p>
+                    ежедневно 10.00 - 19.00, <br>
+                    выходной - воскресенье
+                  </p>
+                </div>
+                <div class="contacts-info__item">
+                  <p class="contacts-info__caption"><b>Телефон:</b></p>
+                  <p><a href="tel:+7 (4832) 33-22-06">+7&nbsp;(4832)&nbsp;33-22-06</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__column">
+              <form class="contacts-form" action="" method="post">
+                <label class="form-item">
+                  <span class="form-label visuallyhidden">Как к вам обращаться?</span>
+                  <input class="form-control contacts__form-control" type="text" name="clientName" placeholder="Как к вам обращаться?">
+                </label>
+                <label class="form-item">
+                  <span class="form-label visuallyhidden">Куда позвонить?</span>
+                  <input class="form-control contacts__form-control" type="tel" name="clientPhone" placeholder="Куда позвонить?" required>
+                </label>
+                <label class="form-item">
+                  <span class="form-label visuallyhidden">Текст сообщения</span>
+                  <textarea class="form-control contacts__form-control" name="clientMessage" rows="4" placeholder="Текст сообщения" required></textarea>
+                </label>
+                <div class="contacts-form__submit-wrapper">
+                  <input type="submit" class="form-submit button button--orange" value="Отправить">
+                </div>
+              </form>
+              <div class="contacts__form-note">
+                <p>
+                  Отправляя данные, вы соглашаетесь с <a href="#" target="_blank">Политикой&nbsp;конфиденциальности</a> этого сайта.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contacts-map" id="contacts-map" style="height: 400px;"></div>
+        </div>
+      </article>
+    </main>
+    @@include('blocks/site-footer.html')
+  </div>
+  @@include('blocks/site-scripts.html')
+</body>
+
+</html>

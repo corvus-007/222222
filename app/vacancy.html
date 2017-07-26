@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Вакансии для водителей</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAkCddAnkaL2nuyq90XZa2cn0ncCFjyEA4"></script>
+</head>
+
+<body class="page">
+  <div class="site-wrapper">
+    @@include('blocks/site-header.html')
+    <main class="main">
+      <article class="page__content">
+        <header class="page__header">
+          <div class="page__headline">
+            <h1 class="page__title">Вакансии для водителей</h1>
+            <div class="page__intro">
+              <p>“Городское такси” содержит огромное количество автомобилей для удовлетворения любой потребности. Для уточнения стоимости перевозки, выберите интересующий вас тип транспорта.</p>
+            </div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="vacancy">
+            <div class="vacancy__inner">
+              <form class="contacts-form" action="" method="post">
+                <label class="form-item">
+                  <span class="form-label">ФИО</span>
+                  <input class="form-control" type="text" placeholder="Антон Павлович Чехов" required>
+                </label>
+                <label class="form-item">
+                  <span class="form-label">Гражданство</span>
+                  <select class="form-control" name="" id="">
+                    <option value="">dswafgdsads</option>
+                    <option value="">dswafgdsadsfgdsds</option>
+                  </select>
+                </label>
+                <div class="form-item">
+                  <span class="form-label">Категория водительских прав</span>
+                  <span class="wpcf7-form-control-wrap">
+                    <span class="wpcf7-form-control wpcf7-radio">
+                      <span class="wpcf7-list-item first">
+                        <label>
+                          <input type="checkbox" name="category" value="A">
+                          <span class="wpcf7-list-item-label">A</span>
+                        </label>
+                      </span>
+                      <span class="wpcf7-list-item">
+                        <label>
+                          <input type="checkbox" name="category" value="B">
+                          <span class="wpcf7-list-item-label">B</span>
+                        </label>
+                      </span>
+                      <span class="wpcf7-list-item last">
+                        <label>
+                          <input type="checkbox" name="category" value="C">
+                          <span class="wpcf7-list-item-label">C</span>
+                        </label>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <label class="form-item">
+                  <span class="form-label">Стаж по водительсткому удостоверению</span>
+                  <select class="form-control" name="" id="">
+                    <option value="">dswafgdsads</option>
+                    <option value="">dswafgdsadsfgdsds</option>
+                  </select>
+                </label>
+                <label class="form-item">
+                  <span class="form-label">Номер телефона</span>
+                  <input class="form-control" type="tel" placeholder="+7 (999) 999-99-99" required>
+                </label>
+                <div class="form-submit-wrapper">
+                  <input class="button" type="submit" value="Отправить">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    @@include('blocks/site-footer.html')
+  </div>
+  @@include('blocks/site-scripts.html')
+</body>
+
+</html>
