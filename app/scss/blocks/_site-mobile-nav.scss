@@ -1,0 +1,24 @@
+.site-mobile-nav {
+  flex-grow: 1;
+}
+
+.site-mobile-nav__list {
+  @include clear-list();
+
+  font-size: rem(26);
+  text-align: center;
+  // text-transform: uppercase;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.5rem;
+    vertical-align: middle;
+    color: $white-color;
+    border: none;
+    text-decoration: none;
+  }
+}
