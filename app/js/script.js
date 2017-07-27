@@ -400,8 +400,7 @@ function initializeMap() {
 
   var mapProp = createProp(locationOffice);
   var map = new google.maps.Map(document.getElementById("contacts-map"), mapProp);
-  var ICONPATH = 'http://ideatech.ru/wp-content/themes/doberman/images/location-pin.svg';
-  var ICONPATH = 'images/location-pin.svg';
+  var ICONPATH = (location.hostname === 'localhost') ? 'images/location-pin.svg' : '/wp-content/themes/gortaxi/images/location-pin.svg';
   var marker = new google.maps.Marker({
     position: locationOffice,
     map: map,
