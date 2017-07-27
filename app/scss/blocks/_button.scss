@@ -46,28 +46,7 @@
   }
 }
 
-
 .button {
   @include make-button();
   @include make-button-color-default();
-
-  &--small {
-    @include mod-button-small();
-  }
-
-  &--large {
-    @include mod-button-large();
-  }
-}
-
-.button__icon {
-  fill: currentColor;
-
-  &:first-child {
-    margin-right: 0.5em;
-  }
-
-  &:last-child {
-    margin-left: 0.5em;
-  }
 }
