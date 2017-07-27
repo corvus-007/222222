@@ -37,11 +37,14 @@
   bottom: 3.5vh;
   left: 0;
   right: 0;
+  width: rem(24);
+  margin: auto;
   cursor: pointer;
-  transition: $duration;
+  transition: filter $duration;
 
   &:hover {
-    border-color: $accent-color;
+    // border-color: $accent-color;
+    filter: brightness(120%);
   }
 
   @include media-breakpoint-down(sm) {
@@ -52,11 +55,12 @@
 .welcome-screen__pointer-mouse {
   position: relative;
   display: block;
-  width: rem(24);
+  width: 100%;
   height: rem(41);
   margin: auto;
   border: 2px solid $accent-color;
   border-radius: 18px / 20px;
+  box-sizing: border-box;
 
   &::before {
     content: "";
@@ -72,9 +76,31 @@
 }
 
 .welcome-screen__pointer-arrow {
-  width: 10px;
+  position: relative;
+  display: block;
+  width: 100%;
+  animation: arrow-anim 1.5s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
 
   &::before {
     content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: rem(10);
+    height: rem(10);
+    margin: auto;
+    border: 2px solid $accent-color;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes arrow-anim {
+  100% {
+    transform: translateY(0.8rem);
+    opacity: 0;
   }
 }
