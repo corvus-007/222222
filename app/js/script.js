@@ -87,8 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 111);
 
     $(welcomeSlider).slick({
-      autoplay: true,
       accessibility: false,
+      autoplaySpeed: 4444,
+      autoplay: true
     });
 
     var welcomeScreenPointer = document.querySelector('.welcome-screen__pointer');
@@ -151,8 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
       return prevValue + item.querySelector('.tarifs-filter__link').dataset.filter;
     }, '');
 
-    console.log(filterString);
-
     if (filterString) {
       $tarifsOutputTables.addClass('tarifs-output__table--hidden');
       $tarifsOutputTables.filter('[data-taxi-id="' + filterString + '"]').removeClass('tarifs-output__table--hidden');
@@ -184,8 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var filterString = Array.prototype.reduce.call(activeFilters, function (prevValue, item) {
         return prevValue + item.querySelector('.tarifs-filter__link').dataset.filter;
       }, '');
-
-      console.log(filterString);
 
       if (filterString) {
         $tarifsOutputTables.addClass('tarifs-output__table--hidden');

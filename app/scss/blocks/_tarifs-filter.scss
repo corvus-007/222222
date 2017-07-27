@@ -91,8 +91,16 @@
 
 .tarifs-filter__label {
   @include dotted-link();
+
+  color: $gray-color-184;
 }
 
 .tarifs-filter__item--active .tarifs-filter__label {
+  color: $accent-color;
   background-image: none;
+}
+
+.tarifs-filter__link:hover .tarifs-filter__label,
+.tarifs-filter__link:focus .tarifs-filter__label {
+  color: $accent-color;
 }
