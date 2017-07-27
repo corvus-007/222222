@@ -7,6 +7,22 @@
 .contacts__column {
   margin-bottom: rem($grid-gutter-width * 1.5);
 
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  & > h3 {
+    font-size: rem($font-size--large);
+  }
+
+  & > * + h3 {
+    margin-top: 2rem;
+  }
+
   @include media-breakpoint-up(md) {
     width: calc((100% - #{rem($grid-gutter-width * 3)}) / 2);
     margin-right: rem($grid-gutter-width * 3);
