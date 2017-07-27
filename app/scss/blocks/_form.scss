@@ -141,15 +141,16 @@ span.wpcf7-not-valid-tip {
 }
 
 
-// .wpcf7-form-control-wrap {
+.wpcf7-form-control-wrap {
 
 //   .wpcf7-form-control {
 //     display: flex;
 //   }
 
-//   .wpcf7-list-item {
-//     margin: 0;
-//   }
+  .wpcf7-list-item {
+    margin: 0;
+    margin-right: 1rem;
+  }
 
 //   input {
 //     @include visuallyhidden();
@@ -187,4 +188,4 @@ span.wpcf7-not-valid-tip {
 //     opacity: 1;
 //     background-image: url("images/star--active.svg");
 //   }
-// }
+}
