@@ -45,8 +45,8 @@
   }
 
   .current-menu-item a {
-    // background-color: $accent-color;
-    // cursor: default;
+    background-color: $accent-color;
+    cursor: default;
   }
 
   @include media-breakpoint-down(md) {

@@ -7,7 +7,6 @@
 
   font-size: rem(26);
   text-align: center;
-  // text-transform: uppercase;
 
   li {
     margin-bottom: 0.5rem;
@@ -20,5 +19,10 @@
     color: $white-color;
     border: none;
     text-decoration: none;
+  }
+
+  .current-menu-item a {
+    color: $accent-color-2;
+    cursor: default;
   }
 }
