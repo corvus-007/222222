@@ -138,52 +138,9 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-
 .wpcf7-form-control-wrap {
-
-//   .wpcf7-form-control {
-//     display: flex;
-//   }
-
   .wpcf7-list-item {
     margin: 0;
     margin-right: 1rem;
   }
-
-//   input {
-//     @include visuallyhidden();
-//   }
-
-//   .wpcf7-list-item-label {
-//     position: relative;
-//     display: inline-block;
-//     padding-left: rem(15);
-//     vertical-align: middle;
-//     cursor: pointer;
-
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       left: 0;
-//       top: 0;
-//       bottom: 0;
-//       width: rem(12);
-//       height: rem(12);
-//       margin: auto;
-//       background-color: #8E9FE6;
-//     }
-//   }
-
-//   input:hover + .wpcf7-list-item-label {
-//     opacity: 0.6;
-//   }
-
-//   input:focus + .wpcf7-list-item-label {
-//     filter: drop-shadow(0 0 2px rgba($black-color, 0.5));
-//   }
-
-//   input:checked + .wpcf7-list-item-label {
-//     opacity: 1;
-//     background-image: url("images/star--active.svg");
-//   }
 }
