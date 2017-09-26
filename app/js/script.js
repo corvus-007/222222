@@ -244,8 +244,8 @@ function loadMapScript() {
 // Инициализация карты
 function initializeMap() {
   var locationOffice = {
-    lat: 53.305469,
-    lng: 34.303716
+    lat: 53.250673,
+    lng: 34.371321
   };
 
   var centerMap = locationOffice;
