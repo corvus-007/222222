@@ -33,9 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var siteCover = document.querySelector('.site-cover');
   var siteCoverClose = siteCover.querySelector('.site-cover__close');
 
-  var downloadPopup = document.querySelector('.download-popup');
-  var downloadPopupClose = document.querySelector('.download-popup__close');
-  var downloadPopupShowed = sessionStorage.getItem('downloadPopupShowed');
+  var REFFERER_TARGET = 'refferer=app';
+  var appPopup = document.querySelector('.download-popup');
+  var appPopupClose = document.querySelector('.download-popup__close');
+  var isFromApp = ~location.search.indexOf(REFFERER_TARGET);
+  var isAppPopupShow = isFromApp || parseInt(sessionStorage.getItem('downloadPopupShowed'), 10);
 
   $(siteCoverClose).on('click', function (event) {
     event.preventDefault();
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     openSiteCover();
   });
 
-  if (!downloadPopupShowed) {
+  if (!isAppPopupShow) {
     setTimeout(function () {
       showDowloadPopup();
     }, 1000);
@@ -55,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showDowloadPopup() {
     if (window.matchMedia("(max-width: 767px)").matches) {
-      downloadPopup.classList.add('download-popup--opened');
+      appPopup.classList.add('download-popup--opened');
     }
   }
 
-  downloadPopupClose.addEventListener('click', function (event) {
+  appPopupClose.addEventListener('click', function (event) {
     event.preventDefault();
-    downloadPopup.classList.remove('download-popup--opened');
-    sessionStorage.setItem('downloadPopupShowed', true);
+    appPopup.classList.remove('download-popup--opened');
+    sessionStorage.setItem('downloadPopupShowed', 1);
   });
 
   if (!document.body.classList.contains('homepage')) {
