@@ -26,7 +26,7 @@
         <div class="container">
           <div class="vacancy">
             <div class="vacancy__inner">
-              <form class="contacts-form" action="" method="post">
+              <form class="vacancy-form" action="" method="post">
                 <label class="form-item">
                   <span class="form-label">ФИО</span>
                   <input class="form-control" type="text" placeholder="Антон Павлович Чехов" required>
@@ -34,8 +34,12 @@
                 <label class="form-item">
                   <span class="form-label">Гражданство</span>
                   <select class="form-control" name="" id="">
-                    <option value="">dswafgdsads</option>
-                    <option value="">dswafgdsadsfgdsds</option>
+                    <option value="">---</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Украина">Украина</option>
+                    <option value="Белоруссия">Белоруссия</option>
+                    <option value="Казахстан">Казахстан</option>
+                    <option value="Другое">Другое</option>
                   </select>
                 </label>
                 <div class="form-item">
@@ -66,13 +70,40 @@
                 <label class="form-item">
                   <span class="form-label">Стаж по водительсткому удостоверению</span>
                   <select class="form-control" name="" id="">
-                    <option value="">dswafgdsads</option>
-                    <option value="">dswafgdsadsfgdsds</option>
+                    <option value="">---</option>
+                    <option value="1 год">1 год</option>
+                    <option value="2 года">2 года</option>
+                    <option value="3 года">3 года</option>
+                    <option value="4 года">4 года</option>
+                    <option value="5 лет">5 лет</option>
+                    <option value="6 лет">6 лет</option>
+                    <option value="7 лет">7 лет</option>
+                    <option value="8 лет и более">8 лет и более</option>
                   </select>
                 </label>
                 <label class="form-item">
+                  <input type="checkbox" name="hasCar" value="yes">
+                  <span class="wpcf7-list-item-label">Я на своей машине</span>
+                </label>
+                <div class="person-car" hidden>
+                  <div class="person-car__inner">
+                    <div class="person-car__column">
+                      <label class="form-item">
+                        <span class="form-label">Марка автомобиля</span>
+                        <input class="form-control" type="text" placeholder="Tesla Model X">
+                      </label>
+                    </div>
+                    <div class="person-car__column">
+                      <label class="form-item">
+                        <span class="form-label">Год выпуска</span>
+                        <input class="form-control" type="number" placeholder="2015" min="1900" maxlength="4">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <label class="form-item">
                   <span class="form-label">Номер телефона</span>
-                  <input class="form-control" type="tel" placeholder="+7 (999) 999-99-99" required>
+                  <input class="form-control" type="tel" placeholder="+7 (___) ___-__-__" required>
                 </label>
                 <div class="form-submit-wrapper">
                   <input class="button" type="submit" value="Отправить">
