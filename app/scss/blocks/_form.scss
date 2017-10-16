@@ -5,10 +5,11 @@
 
 .form-label {
   display: inline-block;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.1rem;
   vertical-align: middle;
   font-weight: 700;
   font-size: 0.95rem;
+  user-select: none;
   cursor: pointer;
 }
 
@@ -49,6 +50,17 @@
 textarea.form-control {
   max-height: 200px;
   resize: vertical;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 .form-submit-wrapper {
@@ -107,7 +119,23 @@ span.wpcf7-not-valid-tip {
 
 .wpcf7-form-control-wrap {
   display: block;
+  padding: rem(12) 0;
+
+  .wpcf7-list-item {
+    margin: 0;
+    margin-right: 1rem;
+  }
 }
+
+.wpcf7-form-control {
+  user-select: none;
+}
+
+.wpcf7-list-item-label {
+  user-select: none;
+  cursor: pointer;
+}
+
 
 .invalid {
 
@@ -135,12 +163,5 @@ span.wpcf7-not-valid-tip {
     background-color: rgba($success-color, 0.8);
     border-color: $success-color;
     color: mix(#000, $success-color, 60%);
-  }
-}
-
-.wpcf7-form-control-wrap {
-  .wpcf7-list-item {
-    margin: 0;
-    margin-right: 1rem;
   }
 }
