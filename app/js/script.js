@@ -5,22 +5,40 @@ document.addEventListener('DOMContentLoaded', function () {
   var vacancyForm = document.querySelector('.vacancy-form');
   var inputHasCar;
   var personCar;
+  var personCarFields;
 
-  if (vacancyForm) {
-    inputHasCar = vacancyForm.elements.hasCar;
-    personCar = vacancyForm.querySelector('.person-car');
-
-    inputHasCar.addEventListener('change', function () {
-      if (isHasCar(this)) {
-        personCar.hidden = false;
-      } else {
-        personCar.hidden = true;
-      }
-    });
+  function makeRequiredField(field) {
+    field.required = true;
   }
 
-  function isHasCar(input) {
+  function makeOptionalField(field) {
+    field.required = false;
+  }
+
+  function isChecked(input) {
     return input.checked ? true : false;
+  }
+
+  if (vacancyForm) {
+    inputHasCar = vacancyForm.elements['hasCar[]'];
+    personCar = vacancyForm.querySelector('.person-car');
+    personCarFields = personCar.querySelectorAll('input');
+
+    if (isChecked(inputHasCar)) {
+      Array.from(personCarFields).forEach(makeRequiredField);
+    } else {
+      Array.from(personCarFields).forEach(makeOptionalField);
+    }
+
+    inputHasCar.addEventListener('change', function () {
+      if (isChecked(this)) {
+        personCar.hidden = false;
+        Array.from(personCarFields).forEach(makeRequiredField);
+      } else {
+        personCar.hidden = true;
+        Array.from(personCarFields).forEach(makeOptionalField);
+      }
+    });
   }
 
   var getTaxi = document.querySelector('.get-taxi');
