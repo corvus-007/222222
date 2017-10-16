@@ -20,7 +20,7 @@ var del = require('del');
 
 gulp.task('style', function () {
   return gulp.src('app/scss/style.scss')
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(plumber({
       errorHandler: function (err) {
         console.log(err);
@@ -40,7 +40,7 @@ gulp.task('style', function () {
       })
     ]))
     .pipe(minify())
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build/'))
     .pipe(browserSync.stream());
 });
