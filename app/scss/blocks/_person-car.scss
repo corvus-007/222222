@@ -14,7 +14,7 @@
     width: calc((100% - #{rem($grid-gutter-width)}) / 2);
     margin-right: rem($grid-gutter-width);
 
-    &:last-child {
+    &:nth-child(2n) {
       margin-right: 0;
     }
   }
