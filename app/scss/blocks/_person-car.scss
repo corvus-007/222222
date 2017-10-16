@@ -1,0 +1,21 @@
+.person-car {
+
+}
+
+.person-car__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person-car__column {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: calc((100% - #{rem($grid-gutter-width)}) / 2);
+    margin-right: rem($grid-gutter-width);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
