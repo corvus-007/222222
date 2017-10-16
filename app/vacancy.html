@@ -82,7 +82,7 @@
                   </select>
                 </label>
                 <label class="form-item">
-                  <input type="checkbox" name="hasCar" value="yes">
+                  <input type="checkbox" name="hasCar[]" value="yes">
                   <span class="wpcf7-list-item-label">Я на своей машине</span>
                 </label>
                 <div class="person-car" hidden>
@@ -90,13 +90,13 @@
                     <div class="person-car__column">
                       <label class="form-item">
                         <span class="form-label">Марка автомобиля</span>
-                        <input class="form-control" type="text" placeholder="Tesla Model X">
+                        <input class="form-control" type="text" name="carType" placeholder="Tesla Model X">
                       </label>
                     </div>
                     <div class="person-car__column">
                       <label class="form-item">
                         <span class="form-label">Год выпуска</span>
-                        <input class="form-control" type="number" placeholder="2015" min="1900" maxlength="4">
+                        <input class="form-control" type="number" name="carYear" placeholder="2015" min="1900" maxlength="4">
                       </label>
                     </div>
                   </div>
