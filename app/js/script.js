@@ -2,6 +2,27 @@ document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
   $('input[type="tel"]').mask("+7 (999) 999-99-99", {});
 
+  var vacancyForm = document.querySelector('.vacancy-form');
+  var inputHasCar;
+  var personCar;
+
+  if (vacancyForm) {
+    inputHasCar = vacancyForm.elements.hasCar;
+    personCar = vacancyForm.querySelector('.person-car');
+
+    inputHasCar.addEventListener('change', function () {
+      if (isHasCar(this)) {
+        personCar.hidden = false;
+      } else {
+        personCar.hidden = true;
+      }
+    });
+  }
+
+  function isHasCar(input) {
+    return input.checked ? true : false;
+  }
+
   var getTaxi = document.querySelector('.get-taxi');
 
   if (getTaxi) {
