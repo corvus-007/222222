@@ -29,7 +29,6 @@
 
   position: relative;
   margin: auto;
-  // margin-top: 10.5vh;
 }
 
 .welcome-screen__pointer {
@@ -43,7 +42,6 @@
   transition: filter $duration;
 
   &:hover {
-    // border-color: $accent-color;
     filter: brightness(120%);
   }
 
