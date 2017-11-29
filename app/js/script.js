@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   svg4everybody();
-  $('input[type="tel"]').mask("+7 (999) 999-99-99", {});
+  $('input[type="tel"]').mask('+7 (999) 999-99-99', {});
 
   var vacancyForm = document.querySelector('.vacancy-form');
   var inputHasCar;
@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function makeRequiredField(field) {
     field.required = true;
+    field.setAttribute('aria-required', 'true');
+    field.classList.add('wpcf7-validates-as-required');
   }
 
   function makeOptionalField(field) {
     field.required = false;
+    field.setAttribute('aria-required', 'false');
+    field.classList.remove('wpcf7-validates-as-required');
   }
 
   function isChecked(input) {
@@ -30,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
       Array.from(personCarFields).forEach(makeOptionalField);
     }
 
-    inputHasCar.addEventListener('change', function () {
+    inputHasCar.addEventListener('change', function() {
       if (isChecked(this)) {
         personCar.hidden = false;
         Array.from(personCarFields).forEach(makeRequiredField);
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var getTaxi = document.querySelector('.get-taxi');
 
   if (getTaxi) {
-    setInterval(function () {
+    setInterval(function() {
       getTaxi.classList.remove('get-taxi--animate');
       getTaxi.offsetWidth = getTaxi.offsetWidth;
       getTaxi.classList.add('get-taxi--animate');
@@ -76,38 +80,39 @@ document.addEventListener('DOMContentLoaded', function () {
   var appPopup = document.querySelector('.download-popup');
   var appPopupClose = document.querySelector('.download-popup__close');
   var isFromApp = ~location.search.indexOf(REFFERER_TARGET);
-  var isAppPopupShow = isFromApp || parseInt(sessionStorage.getItem('downloadPopupShowed'), 10);
+  var isAppPopupShow =
+    isFromApp || parseInt(sessionStorage.getItem('downloadPopupShowed'), 10);
 
-  $(siteCoverClose).on('click', function (event) {
+  $(siteCoverClose).on('click', function(event) {
     event.preventDefault();
     closeSiteCover();
   });
 
-  $(siteNavToggle).on('click', function (event) {
+  $(siteNavToggle).on('click', function(event) {
     event.preventDefault();
     openSiteCover();
   });
 
   if (!isAppPopupShow) {
-    setTimeout(function () {
+    setTimeout(function() {
       showDowloadPopup();
     }, 1000);
   }
 
   function showDowloadPopup() {
-    if (window.matchMedia("(max-width: 767px)").matches) {
+    if (window.matchMedia('(max-width: 767px)').matches) {
       appPopup.classList.add('download-popup--opened');
     }
   }
 
-  appPopupClose.addEventListener('click', function (event) {
+  appPopupClose.addEventListener('click', function(event) {
     event.preventDefault();
     appPopup.classList.remove('download-popup--opened');
     sessionStorage.setItem('downloadPopupShowed', 1);
   });
 
   if (!document.body.classList.contains('homepage')) {
-    setTimeout(function () {
+    setTimeout(function() {
       siteHeaderHeight = siteHeader.offsetHeight;
       siteWrapper.style.paddingTop = siteHeaderHeight + 'px';
     }, 111);
@@ -118,13 +123,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (welcomeScreen) {
     var gutterTopScreen = 0;
-    if (window.matchMedia("(max-height: 567px)").matches) {
+    if (window.matchMedia('(max-height: 567px)').matches) {
       gutterTopScreen = 10;
     }
 
-    setTimeout(function () {
+    setTimeout(function() {
       siteHeaderHeight = siteHeader.offsetHeight;
-      welcomeScreen.style.paddingTop = (siteHeaderHeight + gutterTopScreen) + 'px';
+      welcomeScreen.style.paddingTop =
+        siteHeaderHeight + gutterTopScreen + 'px';
     }, 111);
 
     $(welcomeSlider).slick({
@@ -133,27 +139,27 @@ document.addEventListener('DOMContentLoaded', function () {
       autoplay: true
     });
 
-    var welcomeScreenPointer = document.querySelector('.welcome-screen__pointer');
+    var welcomeScreenPointer = document.querySelector(
+      '.welcome-screen__pointer'
+    );
 
-    welcomeScreenPointer.addEventListener('click', function (event) {
+    welcomeScreenPointer.addEventListener('click', function(event) {
       event.preventDefault();
 
       var headerHeight = siteHeader.offsetHeight;
       var clientHeight = document.documentElement.clientHeight;
-      $("html, body").animate({
-        scrollTop: (clientHeight - headerHeight)
+      $('html, body').animate({
+        scrollTop: clientHeight - headerHeight
       });
     });
   }
-
 
   var $accordeon = $('.js-accordeon');
 
   if ($accordeon.length) {
     $accordeon.find('dd').hide();
-    $accordeon.on('click', 'dt', function (event) {
+    $accordeon.on('click', 'dt', function(event) {
       event.preventDefault();
-
 
       $(event.delegateTarget)
         .find('dt')
@@ -164,14 +170,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!$(this).hasClass('is-opened')) {
         $(this).addClass('is-opened');
-        $(this).next('dd').stop().slideDown();
+        $(this)
+          .next('dd')
+          .stop()
+          .slideDown();
       } else {
         $(this).removeClass('is-opened');
-        $(this).next('dd').stop().slideUp();
+        $(this)
+          .next('dd')
+          .stop()
+          .slideUp();
       }
     });
   }
-
 
   var tabsTarifs = document.querySelector('.tabs-tarifs');
 
@@ -189,26 +200,34 @@ document.addEventListener('DOMContentLoaded', function () {
     // $trarisFilterItems.not($currentTarifsItem).removeClass('tarifs-filter__item--active');
 
     var activeFilters = $('.tarifs-filter__item--active', $tarifsPane);
-    var filterString = Array.prototype.reduce.call(activeFilters, function (prevValue, item) {
-      return prevValue + item.querySelector('.tarifs-filter__link').dataset.filter;
-    }, '');
+    var filterString = Array.prototype.reduce.call(
+      activeFilters,
+      function(prevValue, item) {
+        return (
+          prevValue + item.querySelector('.tarifs-filter__link').dataset.filter
+        );
+      },
+      ''
+    );
 
     if (filterString) {
       $tarifsOutputTables.addClass('tarifs-output__table--hidden');
-      $tarifsOutputTables.filter('[data-taxi-id="' + filterString + '"]').removeClass('tarifs-output__table--hidden');
+      $tarifsOutputTables
+        .filter('[data-taxi-id="' + filterString + '"]')
+        .removeClass('tarifs-output__table--hidden');
     }
   }
 
   if (tabsTarifs) {
     $(tabsTarifs).tabslet();
 
-    $(tabsTarifs).on('_after', function () {
+    $(tabsTarifs).on('_after', function() {
       updateTarifsFilter();
     });
 
     updateTarifsFilter();
 
-    $(tabsTarifs).on('click', '.tarifs-filter__link', function (event) {
+    $(tabsTarifs).on('click', '.tarifs-filter__link', function(event) {
       event.preventDefault();
       var $tarifsPane = $(this).closest('.tabs-tarifs__pane');
       var $tarifsOutputTables = $('.tarifs-output__table', $tarifsPane);
@@ -218,25 +237,38 @@ document.addEventListener('DOMContentLoaded', function () {
       var $trarisFilterItems = $('.tarifs-filter__item', $tarifsFilterList);
 
       $currentTarifsItem.addClass('tarifs-filter__item--active');
-      $trarisFilterItems.not($currentTarifsItem).removeClass('tarifs-filter__item--active');
+      $trarisFilterItems
+        .not($currentTarifsItem)
+        .removeClass('tarifs-filter__item--active');
 
       var activeFilters = $('.tarifs-filter__item--active', $tarifsPane);
-      var filterString = Array.prototype.reduce.call(activeFilters, function (prevValue, item) {
-        return prevValue + item.querySelector('.tarifs-filter__link').dataset.filter;
-      }, '');
+      var filterString = Array.prototype.reduce.call(
+        activeFilters,
+        function(prevValue, item) {
+          return (
+            prevValue +
+            item.querySelector('.tarifs-filter__link').dataset.filter
+          );
+        },
+        ''
+      );
 
       if (filterString) {
         $tarifsOutputTables.addClass('tarifs-output__table--hidden');
-        $tarifsOutputTables.filter('[data-taxi-id="' + filterString + '"]').removeClass('tarifs-output__table--hidden');
+        $tarifsOutputTables
+          .filter('[data-taxi-id="' + filterString + '"]')
+          .removeClass('tarifs-output__table--hidden');
       }
     });
   }
 
   var appSlider = document.querySelector('.app-slider');
-  var appSliderTouchId = document.querySelector('.app-slider-mocup-phone__touch-id');
+  var appSliderTouchId = document.querySelector(
+    '.app-slider-mocup-phone__touch-id'
+  );
 
   if (appSlider) {
-    appSliderTouchId.addEventListener('click', function (event) {
+    appSliderTouchId.addEventListener('click', function(event) {
       event.preventDefault();
       $(appSlider).slick('slickNext');
     });
@@ -248,11 +280,13 @@ document.addEventListener('DOMContentLoaded', function () {
     dots: true,
     appendDots: '.app-slider-controls',
     dotsClass: 'app-slider-controls__list',
-    customPaging: function (slider, i) {
-      var currentSlide = slider.$slides[i]
-      var descriptionSlide = currentSlide.querySelector('.app-slider__description');
+    customPaging: function(slider, i) {
+      var currentSlide = slider.$slides[i];
+      var descriptionSlide = currentSlide.querySelector(
+        '.app-slider__description'
+      );
       var descriptionSlideText = descriptionSlide.textContent;
-      var controlsButton = document.createElement('button')
+      var controlsButton = document.createElement('button');
       controlsButton.classList.add('app-slider-controls__button');
       controlsButton.type = 'button';
       controlsButton.textContent = descriptionSlideText;
@@ -273,14 +307,13 @@ document.addEventListener('DOMContentLoaded', function () {
   /*=====  End of Contacts map  ======*/
 });
 
-
 // Загрузка карты
 function loadMapScript() {
-  var script = document.createElement("script");
-  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyC9a_UDjprd--E33HE4d9_S6I0yjvViR8o&callback=initializeMap";
+  var script = document.createElement('script');
+  script.src =
+    'http://maps.googleapis.com/maps/api/js?key=AIzaSyC9a_UDjprd--E33HE4d9_S6I0yjvViR8o&callback=initializeMap';
   document.head.appendChild(script);
 }
-
 
 // Инициализация карты
 function initializeMap() {
@@ -302,146 +335,188 @@ function initializeMap() {
       },
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel: false,
-      styles: [{
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#f5f5f5"
-          }]
-        },
+      styles: [
         {
-          "elementType": "labels.icon",
-          "stylers": [{
-            "visibility": "off"
-          }]
-        },
-        {
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#616161"
-          }]
-        },
-        {
-          "elementType": "labels.text.stroke",
-          "stylers": [{
-            "color": "#f5f5f5"
-          }]
-        },
-        {
-          "featureType": "landscape.man_made",
-          "elementType": "geometry.fill",
-          "stylers": [{
-              "color": "#e1e1e1"
-            },
+          elementType: 'geometry',
+          stylers: [
             {
-              "lightness": 30
+              color: '#f5f5f5'
             }
           ]
         },
         {
-          "featureType": "landscape.man_made",
-          "elementType": "labels.text",
-          "stylers": [{
-            "color": "#969696"
-          }]
+          elementType: 'labels.icon',
+          stylers: [
+            {
+              visibility: 'off'
+            }
+          ]
         },
         {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#eeeeee"
-          }]
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#616161'
+            }
+          ]
         },
         {
-          "featureType": "poi",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#757575"
-          }]
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              color: '#f5f5f5'
+            }
+          ]
         },
         {
-          "featureType": "poi.park",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#e5e5e5"
-          }]
+          featureType: 'landscape.man_made',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#e1e1e1'
+            },
+            {
+              lightness: 30
+            }
+          ]
         },
         {
-          "featureType": "poi.park",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#9e9e9e"
-          }]
+          featureType: 'landscape.man_made',
+          elementType: 'labels.text',
+          stylers: [
+            {
+              color: '#969696'
+            }
+          ]
         },
         {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#ffffff"
-          }]
+          featureType: 'poi',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#eeeeee'
+            }
+          ]
         },
         {
-          "featureType": "road.arterial",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#757575"
-          }]
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#757575'
+            }
+          ]
         },
         {
-          "featureType": "road.highway",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#dadada"
-          }]
+          featureType: 'poi.park',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#e5e5e5'
+            }
+          ]
         },
         {
-          "featureType": "road.highway",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#616161"
-          }]
+          featureType: 'poi.park',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#9e9e9e'
+            }
+          ]
         },
         {
-          "featureType": "road.local",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#9e9e9e"
-          }]
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#ffffff'
+            }
+          ]
         },
         {
-          "featureType": "transit.line",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#e5e5e5"
-          }]
+          featureType: 'road.arterial',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#757575'
+            }
+          ]
         },
         {
-          "featureType": "transit.station",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#eeeeee"
-          }]
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#dadada'
+            }
+          ]
         },
         {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [{
-            "color": "#c9c9c9"
-          }]
+          featureType: 'road.highway',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#616161'
+            }
+          ]
         },
         {
-          "featureType": "water",
-          "elementType": "labels.text.fill",
-          "stylers": [{
-            "color": "#9e9e9e"
-          }]
+          featureType: 'road.local',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#9e9e9e'
+            }
+          ]
+        },
+        {
+          featureType: 'transit.line',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#e5e5e5'
+            }
+          ]
+        },
+        {
+          featureType: 'transit.station',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#eeeeee'
+            }
+          ]
+        },
+        {
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [
+            {
+              color: '#c9c9c9'
+            }
+          ]
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#9e9e9e'
+            }
+          ]
         }
       ]
     };
   }
 
   var mapProp = createProp(locationOffice);
-  var map = new google.maps.Map(document.getElementById("contacts-map"), mapProp);
-  var ICONPATH = (location.hostname === 'localhost') ? 'images/location-pin.svg' : '/wp-content/themes/gortaxi/images/location-pin.svg';
+  var map = new google.maps.Map(
+    document.getElementById('contacts-map'),
+    mapProp
+  );
+  var ICONPATH =
+    location.hostname === 'localhost' ? 'images/location-pin.svg' : '/wp-content/themes/gortaxi/images/location-pin.svg';
   var marker = new google.maps.Marker({
     position: locationOffice,
     map: map,
