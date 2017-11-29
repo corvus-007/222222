@@ -1,5 +1,6 @@
 .tarifs-filter {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: rem($grid-gutter-width * 1);
 
@@ -21,12 +22,13 @@
   @include clear-list();
 
   margin-right: 2vw;
+  margin-bottom: 2rem;
   font-weight: 500;
   font-size: rem($font-size--smaller);
   font-family: $secondary-font;
   text-transform: uppercase;
 
-  &:last-child {
+  &:nth-child(2n) {
     margin-right: 0;
   }
 
@@ -34,6 +36,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-right: 3vw;
+    margin-bottom: 2vw;
   }
 
   @include media-breakpoint-up(lg) {
@@ -43,7 +46,7 @@
 }
 
 .tarifs-filter__item {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -55,6 +58,7 @@
 
   @include media-breakpoint-up(sm) {
     margin-right: 1.2rem;
+    margin-bottom: 1.2rem;
 
     &:last-child {
       margin-right: 0;
