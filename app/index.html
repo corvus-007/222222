@@ -148,14 +148,6 @@
                         <span class="tarifs-filter__label">Дневной тариф</span>
                       </a>
                     </li>
-                    <!-- <li class="tarifs-filter__item">
-                      <a class="tarifs-filter__link" href="#">
-                        <svg class="tarifs-filter__icon" width="32" height="32">
-                          <use xlink:href="images/symbols.svg#cloudy-3"></use>
-                        </svg>
-                        <span class="tarifs-filter__label">Вечерний тариф</span>
-                      </a>
-                    </li> -->
                     <li class="tarifs-filter__item">
                       <a class="tarifs-filter__link" href="#" data-filter="night">
                         <svg class="tarifs-filter__icon" width="32" height="32">
@@ -180,6 +172,24 @@
                           <use xlink:href="images/symbols.svg#garden"></use>
                         </svg>
                         <span class="tarifs-filter__label">За городом</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="tarifs-filter__list tarifs-filter__list--period">
+                    <li class="tarifs-filter__item tarifs-filter__item--active">
+                      <a class="tarifs-filter__link" href="#" data-filter="">
+                        <svg class="tarifs-filter__icon" width="32" height="32">
+                          <use xlink:href="images/symbols.svg#calendar"></use>
+                        </svg>
+                        <span class="tarifs-filter__label">Будни</span>
+                      </a>
+                    </li>
+                    <li class="tarifs-filter__item">
+                      <a class="tarifs-filter__link" href="#" data-filter="holiday">
+                        <svg class="tarifs-filter__icon" width="32" height="32">
+                          <use xlink:href="images/symbols.svg#calendar"></use>
+                        </svg>
+                        <span class="tarifs-filter__label">Выходной</span>
                       </a>
                     </li>
                   </ul>
@@ -294,7 +304,7 @@
                       </div>
                     </div>
                   </div>
-                  <div data-taxi-id="holiday" class="tarifs-output__table">
+                  <div data-taxi-id="nightoutworkday" class="tarifs-output__table">
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
