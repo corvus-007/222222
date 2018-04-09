@@ -69,6 +69,10 @@
     }
   }
 
+  &--disabled {
+    pointer-events: none;
+  }
+
   @include media-breakpoint-down(xs) {
     &:last-child {
       &::before,
@@ -90,6 +94,10 @@
   &:hover,
   &:focus {
     color: $accent-color;
+  }
+
+  .tabs-tarifs__item--disabled & {
+    color: $muted-color;
   }
 
   @include media-breakpoint-down(xs) {
