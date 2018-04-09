@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (filterString) {
         $tarifsOutputTables.addClass('tarifs-output__table--hidden');
         $tarifsOutputTables
-          .filter('[data-taxi-id="' + filterString + '"]')
+          .filter('[data-taxi-id*="' + filterString + '"]')
           .removeClass('tarifs-output__table--hidden');
       }
     });
