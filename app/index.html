@@ -470,16 +470,50 @@
               <div class="tarifs__column tarifs__column--filter">
                 <div class="tarifs-filter">
                   <ul class="tarifs-filter__list">
+                    <li class="tarifs-filter__item tarifs-filter__item--active">
+                      <a class="tarifs-filter__link" href="#" data-filter="">
+                        <svg class="tarifs-filter__icon" width="32" height="32">
+                          <use xlink:href="images/symbols.svg#sun"></use>
+                        </svg>
+                        <span class="tarifs-filter__label">Дневной тариф</span>
+                      </a>
+                    </li>
                     <li class="tarifs-filter__item">
-                      <a class="tarifs-filter__link" href="#">
+                      <a class="tarifs-filter__link" href="#" data-filter="evening">
+                        <svg class="tarifs-filter__icon" width="32" height="32">
+                          <use xlink:href="images/symbols.svg#moon-2"></use>
+                        </svg>
+                        <span class="tarifs-filter__label">Вечерний тариф</span>
+                      </a>
+                    </li>
+                    <li class="tarifs-filter__item">
+                      <a class="tarifs-filter__link" href="#" data-filter="night">
+                        <svg class="tarifs-filter__icon" width="32" height="32">
+                          <use xlink:href="images/symbols.svg#moon-2"></use>
+                        </svg>
+                        <span class="tarifs-filter__label">Ночной тариф</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="tarifs-filter__list">
+                    <li class="tarifs-filter__item tarifs-filter__item--active">
+                      <a class="tarifs-filter__link" href="#" data-filter="city">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#university"></use>
                         </svg>
                         <span class="tarifs-filter__label">По городу</span>
                       </a>
                     </li>
-                    <li class="tarifs-filter__item tarifs-filter__item--active">
-                      <a class="tarifs-filter__link" href="#">
+                    <li class="tarifs-filter__item">
+                      <a class="tarifs-filter__link" href="#" data-filter="suburb">
+                        <svg class="tarifs-filter__icon" width="32" height="32">
+                          <use xlink:href="images/symbols.svg#garden"></use>
+                        </svg>
+                        <span class="tarifs-filter__label">Пригород</span>
+                      </a>
+                    </li>
+                    <li class="tarifs-filter__item">
+                      <a class="tarifs-filter__link" href="#" data-filter="out">
                         <svg class="tarifs-filter__icon" width="32" height="32">
                           <use xlink:href="images/symbols.svg#garden"></use>
                         </svg>
@@ -497,7 +531,8 @@
                   <div class="tarifs-output__notice">
                     <p>В выходные и праздничные дни круглосуточно действует ночной тариф</p>
                   </div>
-                  <div class="tarifs-output__table">
+                  <!-- Город -->
+                  <div data-taxi-id="city" class="tarifs-output__table">
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
@@ -512,8 +547,72 @@
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item tarifs-output__item--accent">
                         <span class="tarifs-output__label">
-                          Поездка
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          23
+                          <span class="tarifs-output__value-unit">₽/км</span>
                         </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          19
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          360
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          299
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-taxi-id="eveningcity" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                          Посадка
+                        </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          24
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
                         <span class="tarifs-output__value">
                           20
                           <span class="tarifs-output__value-unit">₽/км</span>
@@ -523,10 +622,10 @@
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
-                          Ожидание
-                        </span>
+                        Ожидание
+                      </span>
                         <span class="tarifs-output__value">
-                          350
+                          390
                           <span class="tarifs-output__value-unit">₽/час</span>
                         </span>
                       </div>
@@ -534,23 +633,292 @@
                     <div class="tarifs-output__column">
                       <div class="tarifs-output__item">
                         <span class="tarifs-output__label">
-                          Минимум
-                        </span>
+                        Минимум
+                      </span>
                         <span class="tarifs-output__value">
-                          400
+                          349
                           <span class="tarifs-output__value-unit">₽</span>
                         </span>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="tarifs__more">
-                  <a class="tarifs__more-link" href="#">
-                    Подробнее о тарифах
-                    <svg class="tarifs__more-icon" width="18" height="18">
-                      <use xlink:href="images/symbols.svg#arrow-next"></use>
-                    </svg>
-                  </a>
+                  <div data-taxi-id="nightcity" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Посадка
+                      </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          25
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          21
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          420
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          399
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Пригород -->
+                  <div data-taxi-id="suburb" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                          Посадка
+                        </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          24
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          20
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          390
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          349
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-taxi-id="eveningsuburb" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                          Посадка
+                        </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          25
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          21
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          420
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          399
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-taxi-id="nightsuburb" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                          Посадка
+                        </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          26
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          21
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          420
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          449
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Загород -->
+                  <div data-taxi-id="out eveningout nightout" class="tarifs-output__table">
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                          Посадка
+                        </span>
+                        <span class="tarifs-output__value">
+                          0
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Первые 5 км
+                      </span>
+                        <span class="tarifs-output__value">
+                          21
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                      <div class="tarifs-output__item tarifs-output__item--accent">
+                        <span class="tarifs-output__label">
+                        Далее
+                      </span>
+                        <span class="tarifs-output__value">
+                          21
+                          <span class="tarifs-output__value-unit">₽/км</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Ожидание
+                      </span>
+                        <span class="tarifs-output__value">
+                          360
+                          <span class="tarifs-output__value-unit">₽/час</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="tarifs-output__column">
+                      <div class="tarifs-output__item">
+                        <span class="tarifs-output__label">
+                        Минимум
+                      </span>
+                        <span class="tarifs-output__value">
+                          399
+                          <span class="tarifs-output__value-unit">₽</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
